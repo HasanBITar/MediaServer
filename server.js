@@ -1,53 +1,53 @@
 const open = require('open');
 
 const yargs = require('yargs/yargs');
-const {hideBin} = require('yargs/helpers');
+const { hideBin } = require('yargs/helpers');
 require('dotenv').config();
 
 global.__config = require(__dirname + '/config');
-const config = global.__config;2
+const config = global.__config; 2
 
 const settings = require(config.root + '/src/all-settings');
 const startServer = require(config.root + '/src/utility/startServer.js');
 // const argv = parseArgs(process.argv.slice(2));
 
 const argv = yargs(hideBin(process.argv))
-    .scriptName('media-server')
-    .usage('$0 [args]', 'A localhost Media Server', (yargs) => {
-      yargs.option('verbose', {
-        alias: 'v',
-        type: 'boolean',
-        description: 'Run with verbose logging',
-        count: true,
-      });
-      yargs.option('location', {
-        alias: 'l',
-        type: 'string',
-        description: 'the path to media content directory',
-      });
-      yargs.option('port', {
-        alias: 'p',
-        type: 'number',
-        description: 'the port to run server on',
-      });
-      yargs.option('gui', {
-        alias: 'g',
-        type: 'boolean',
-        description: 'open gui mode for configuring settings',
-      });
-      yargs.option('image', {
-        type: 'boolean',
-        description: 'enable display of images',
-        default: false,
-      });
-      yargs.option('video', {
-        type: 'boolean',
-        description: 'enable display of videos',
-        default: true,
-      });
-    })
-    .alias('h', 'help')
-    .version(false).argv;
+  .scriptName('media-server')
+  .usage('$0 [args]', 'A localhost Media Server', (yargs) => {
+    yargs.option('verbose', {
+      alias: 'v',
+      type: 'boolean',
+      description: 'Run with verbose logging',
+      count: true,
+    });
+    yargs.option('location', {
+      alias: 'l',
+      type: 'string',
+      description: 'the path to media content directory',
+    });
+    yargs.option('port', {
+      alias: 'p',
+      type: 'number',
+      description: 'the port to run server on',
+    });
+    yargs.option('gui', {
+      alias: 'g',
+      type: 'boolean',
+      description: 'open gui mode for configuring settings',
+    });
+    yargs.option('image', {
+      type: 'boolean',
+      description: 'enable display of images',
+      default: false,
+    });
+    yargs.option('video', {
+      type: 'boolean',
+      description: 'enable display of videos',
+      default: true,
+    });
+  })
+  .alias('h', 'help')
+  .version(false).argv;
 
 Object.assign(settings, argv);
 
@@ -68,19 +68,19 @@ if (argv.g) {
     const url =
       'http://' +
       adminServer.address().address +
-      ':' +``
-      adminServer.address().port;
+      ':' + ``
+    adminServer.address().port;
     console.log('listening at ' + url);
     open(url);
   });
   adminServer.on('error', (err) => {
     if (err.errno === -98) {
       const url = 'http://' + err.address + ':' + err.port;
-      console.log('Server already running at '+ url);
+      console.log('Server already running at ' + url);
       open(url);
     }
   });
-  admin.on('close', () => {});
+  admin.on('close', () => { });
 } else {
   const app = require(config.root + '/src/user/index.js');
   startServer(app, PORT);
