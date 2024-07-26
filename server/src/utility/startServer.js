@@ -6,9 +6,13 @@ const fs = require('fs');
  * @param {express-app} app the express app to start on all interfaces
  * @param {string} port the port to start the app on
  * @param {string} logfile if you want to log the console stuff to file also
+ * @param {string} serverName a unique name for the server for easy debugging
  * @return {Http.server} the server instance
  */
-function startServer(app, port, logfile = undefined) {
+
+
+function startServer(app, port, logfile = undefined, serverName = '') {
+  console.log(serverName, '\n\n');
   let stream;
   if (logfile) {
     stream = fs.createWriteStream(logfile, {flags: 'a'});

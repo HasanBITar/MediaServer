@@ -14,7 +14,7 @@ settings.serverRunning = false;
 
 router.get('/start', (req, res) => {
   const clientApp = requireUncached(config.root + '/src/user/index.js');
-  server = startServer(clientApp, settings.port, config.logFile);
+  server = startServer(clientApp, settings.port, config.logFile, 'userServer');
   settings.serverRunning = true;
   res.send('OK');
 });
