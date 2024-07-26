@@ -47,6 +47,6 @@
 @tailwind utilities;
 
 
-*:not(body):not(#user-dropdown) {
-  transition: .3s ease-in-out;
+* {
+  /* transition: 3s ease-in-out; */
 }

@@ -34,3 +34,5 @@ const ProfielMenu = () => {
             </div>
         </div>)
 }
+
+export default ProfielMenu;
