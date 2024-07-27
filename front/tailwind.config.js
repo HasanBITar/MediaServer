@@ -17,10 +17,14 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite/**/*.js"
   ],
-  // purge: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  purge: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      width: {
+        'card-lg': '40rem',
+      },
+    },
   },
   variants: {
     extend: {},
