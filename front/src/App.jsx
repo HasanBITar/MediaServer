@@ -1,16 +1,23 @@
-import './App.css'
-import NavBar from './components/NavBar/NavBar';
-import { BrowserRouter } from 'react-router-dom';
-
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './Layouts/MainLayout';
+import HomePage from './Pages/HomePage';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <NavBar />
-      </BrowserRouter>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+// import Random from './random';
+// function App() {
+//   return (<Random></Random>)
+// }
 
 export default App
