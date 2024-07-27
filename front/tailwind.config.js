@@ -17,8 +17,8 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./node_modules/flowbite/**/*.js"
   ],
-  purge: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  // purge: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     extend: {},
   },
