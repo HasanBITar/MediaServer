@@ -40,7 +40,7 @@ const HomeSection = ({ title, children }) => {
 
 
     return (
-        <div className="flex flex-col m-auto">
+        <div className="flex flex-col m-auto rounded bg-gray-800 p-5 lg:p-8 mb-2">
             <h1 className="flex pb-5 font-bold text-4xl text-white">
                 {title}
             </h1>

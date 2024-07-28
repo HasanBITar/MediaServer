@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { formatString, formatDuration, formatDate } from "../../utils/helpers";
 
 
-const MediaCard = ({ id, thumbnail, title, type, createDate }) => {
+const ImageCard = ({ id, thumbnail, title, type, createDate }) => {
     const formatedTitle = formatString(title);
     const formatedDate = formatDate(createDate);
     return (
-        <Link to={`/view/${id}`} className="inline-block w-1/3 md:w-44 lg:w-52 md:flex-auto flex-none ">
+        <Link to={`/view/${id}`} className="inline-block w-[45%] md:w-52 lg:w-60 xl:64 md:flex-auto flex-none ">
             <div className="relative w-full overflow-hidden rounded-xl shadow-md bg-gray-800">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '100%' }}>
@@ -18,12 +18,12 @@ const MediaCard = ({ id, thumbnail, title, type, createDate }) => {
                 </div>
             </div>
             {/* Video Info */}
-            <div className="mt-2">
+            <div className="mt-2 px-1">
                 <h3 className="text-lg font-medium text-white">{formatedTitle}</h3>
-                <p className="text-sm text-gray-600">{formatedDate}</p>
+                <p className="text-md font-medium text-gray-400">{formatedDate}</p>
             </div>
         </Link>
     );
 };
 
-export default MediaCard;
+export default ImageCard;

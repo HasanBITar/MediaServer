@@ -3,7 +3,7 @@ import { formatString, formatDuration, formatDate } from "../../utils/helpers";
 
 const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate }) => {
     const progress = durationWatched / duration * 100;
-    const formatedTitle = formatString(title);
+    const formatedTitle = formatString(title, 80);
     const formatedDuration = formatDuration(duration);
     const formatedDate = formatDate(createDate);
     return (
@@ -30,9 +30,9 @@ const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate
                 </div>
             </div>
             {/* Video Info */}
-            <div className="mt-2">
+            <div className="mt-2 px-1">
                 <h3 className="text-lg font-medium text-white">{formatedTitle}</h3>
-                <p className="text-sm text-gray-600">{formatedDate}</p>
+                <p className="text-md font-medium text-gray-400">{formatedDate}</p>
             </div>
         </Link>
     );

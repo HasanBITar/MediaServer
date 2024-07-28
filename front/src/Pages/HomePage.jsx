@@ -1,13 +1,15 @@
 
 import HomeSection from "../components/container/HomeSection";
 import VideoCard from "../components/cards/VideoCard";
-import MediaCard from "../components/cards/MediaCard";
+import ImageCard from "../components/cards/ImageCard";
+import AudioCard from "../components/cards/AudioCard";
+import BookCard from "../components/cards/BookCard";
 
 const data = [
     {
         video_id: 'svd329esvdsdv1',
         thumbnail: 'images/thumb.jpeg',
-        fileName: 'random video sdvksdv sdvksdv sdv kblos osiw isvd svvsd iwev',
+        fileName: 'random video sdvksdv sdvksdv sdv kblos osiw isvd svvsd iwev svdisdv sjv jsdvdj sdvj jsvd jwro q;b wo wjv wvh',
         duration: 1000,
         durationWatched: 20,
         createDate: '12/10/2024'
@@ -63,11 +65,11 @@ const HomePage = () => {
                 ))}
             </HomeSection>
 
-            <hr className="my-7 border-t-2 border-gray-700" />
+            {/* <hr className="my-7 border-t-2 border-gray-700" /> */}
             
-            <HomeSection fileName={'Recent Photos'}>
+            <HomeSection title={'Recent Music'}>
                 {data.map((item) => (
-                    <MediaCard
+                    <AudioCard
                         key={item.video_id}
                         id={item.video_id}
                         thumbnail={item.thumbnail}
@@ -78,6 +80,34 @@ const HomePage = () => {
                 ))}
             </HomeSection>
 
+
+            {/* <hr className="my-7 border-t-2 border-gray-700" /> */}
+            
+            <HomeSection title={'Recent Photos'}>
+                {data.map((item) => (
+                    <ImageCard
+                        key={item.video_id}
+                        id={item.video_id}
+                        thumbnail={item.thumbnail}
+                        title={item.fileName}
+                        type="PDF"
+                        createDate="12/10/2024"
+                    />
+                ))}
+            </HomeSection>
+
+            <HomeSection title={'Recent Books'}>
+                {data.map((item) => (
+                    <BookCard
+                        key={item.video_id}
+                        id={item.video_id}
+                        thumbnail={item.thumbnail}
+                        title={item.fileName}
+                        type="PDF"
+                        createDate="12/10/2024"
+                    />
+                ))}
+            </HomeSection>
         </>
     )
 }
