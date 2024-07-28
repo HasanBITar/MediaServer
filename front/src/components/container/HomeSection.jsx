@@ -31,7 +31,7 @@ const HomeSection = ({ title, children }) => {
             }
         };
 
-        scrollInterval = setInterval(stepScroll, 2000);
+        scrollInterval = setInterval(stepScroll, 3000);
 
         return () => {
             clearInterval(scrollInterval);
@@ -45,7 +45,7 @@ const HomeSection = ({ title, children }) => {
                 {title}
             </h1>
             <div className="flex overflow-x-scroll hide-scroll-bar" ref={scrollContainerRef}>
-                <div className="flex flex-nowrap space-x-9">
+                <div className="flex flex-nowrap space-x-7">
                     {children}
                 </div>
             </div>

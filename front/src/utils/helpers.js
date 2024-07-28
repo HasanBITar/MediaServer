@@ -11,3 +11,13 @@ export function formatDuration(seconds) {
     return `${hoursFormatted}${minutesFormatted}${secondsFormatted}`;
 }
 
+export function formatDate(date) {
+    return date;
+}
+
+export function formatString(str, length = 35) {
+    if (str.length <= length)
+        return str;
+    else
+        return str.slice(0, length) + '...';
+}

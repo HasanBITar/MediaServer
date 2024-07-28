@@ -52,13 +52,15 @@
   margin: 0;
 }
 
-body {
+/* body {
   min-height: 100vh;
+  max-height: fit-content;
 }
 
 #root {
   min-height: 100vh;
-}
+  max-height: fit-content;
+} */
 
 .hide-scroll-bar {
   -ms-overflow-style: none;
