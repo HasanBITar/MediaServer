@@ -86,6 +86,7 @@ function Videos() {
             duration={item.duration}
             durationWatched={item.durationWatched}
             createDate={item.createDate}
+            all={false}
           />
         ))}
       </HomeSection>
@@ -99,10 +100,11 @@ function Videos() {
             duration={item.duration}
             durationWatched={item.durationWatched}
             createDate={item.createDate}
+            all={false}
           />
         ))}
       </HomeSection>
-      <HomeSection title={"Other Video"}>
+      <HomeSection title={"Other Videos"}>
         {VideoData.map((item) => (
           <VideoCard
             key={item.video_id}
@@ -112,6 +114,7 @@ function Videos() {
             duration={item.duration}
             durationWatched={item.durationWatched}
             createDate={item.createDate}
+            all={true}
           />
         ))}
       </HomeSection>

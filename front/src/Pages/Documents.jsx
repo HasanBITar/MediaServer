@@ -1,7 +1,7 @@
-import AudioCard from "../components/cards/AudioCard";
+import BookCard from "../components/cards/BookCard";
 import HomeSection from "../components/containers/HomeSection";
 
-function Music() {
+function Documents() {
   const data = [
     {
       video_id: "svd329esvdsdv1",
@@ -109,12 +109,11 @@ function Music() {
       createDate: "12/10/2024",
     },
   ];
-
   return (
     <div>
-      <HomeSection title={"Artists"}>
+      <HomeSection title={"By Author"}>
         {data.map((item) => (
-          <AudioCard
+          <BookCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
@@ -125,9 +124,9 @@ function Music() {
           />
         ))}
       </HomeSection>
-      <HomeSection title={"Albums"}>
+      <HomeSection title={"By Genre"}>
         {data.map((item) => (
-          <AudioCard
+          <BookCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
@@ -138,22 +137,9 @@ function Music() {
           />
         ))}
       </HomeSection>
-      <HomeSection title={"Playlists"}>
+      <HomeSection title={"All Books"}>
         {data.map((item) => (
-          <AudioCard
-            key={item.video_id}
-            id={item.video_id}
-            thumbnail={item.thumbnail}
-            title={item.fileName}
-            type="PDF"
-            createDate="12/10/2024"
-            all={false}
-          />
-        ))}
-      </HomeSection>
-      <HomeSection title={"All Music"}>
-        {data.map((item) => (
-          <AudioCard
+          <BookCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
@@ -168,4 +154,4 @@ function Music() {
   );
 }
 
-export default Music;
+export default Documents;

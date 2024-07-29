@@ -33,6 +33,7 @@ function Images() {
             title={item.fileName}
             type="PDF"
             createDate="12/10/2024"
+            all={false}
           />
         ))}
       </HomeSection>
@@ -45,6 +46,7 @@ function Images() {
             title={item.fileName}
             type="PDF"
             createDate="12/10/2024"
+            all={true}
           />
         ))}
       </HomeSection>

@@ -6,6 +6,7 @@ import SigninPage from "./pages/SigninPage";
 import Videos from "./pages/Videos";
 import Images from "./pages/Images";
 import Music from "./pages/Music";
+import Documents from "./pages/Documents";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="videos" element={<Videos />} />
           <Route path="images" element={<Images />} />
           <Route path="music" element={<Music />} />
+          <Route path="documents" element={<Documents />} />
         </Route>
       </Routes>
     </BrowserRouter>

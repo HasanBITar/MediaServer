@@ -60,6 +60,7 @@ const HomePage = () => {
             duration={item.duration}
             durationWatched={item.durationWatched}
             createDate={item.createDate}
+            all={false}
           />
         ))}
       </HomeSection>
@@ -75,6 +76,7 @@ const HomePage = () => {
             title={item.fileName}
             type="PDF"
             createDate="12/10/2024"
+            all={false}
           />
         ))}
       </HomeSection>
@@ -90,6 +92,7 @@ const HomePage = () => {
             title={item.fileName}
             type="PDF"
             createDate="12/10/2024"
+            all={false}
           />
         ))}
       </HomeSection>
@@ -103,6 +106,7 @@ const HomePage = () => {
             title={item.fileName}
             type="PDF"
             createDate="12/10/2024"
+            all={false}
           />
         ))}
       </HomeSection>
