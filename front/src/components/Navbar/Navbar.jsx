@@ -4,7 +4,7 @@ import Logo from './Logo'
 import ProfileMenu from './ProfileMenu'
 import NavList from './NavList';
 
-const NavBar = () => {
+const Navbar = () => {
 
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -74,4 +74,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar;
+export default Navbar;

@@ -6,6 +6,6 @@ export function validateEmail(email) {
 }
 
 export function validatePassword(password) {
-    if(password.length < 8) return [false, 'it should be longer than 8 characters'];
+    if(password.length < 8) return [false, 'password should be longer than 8 characters'];
     return [null, ''];
 }
