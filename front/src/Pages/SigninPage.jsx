@@ -1,21 +1,61 @@
-import Logo from "../components/navbar/Logo";
-import Centered from "../components/containers/Centered";
+import { useState } from "react";
+
+import { validateEmail, validatePassword } from "../utils/validators";
 import FeaturedLogo from "../components/navbar/FeaturedLogo";
+import ValidatedInput from "../components/inputs/ValidatedInput";
+
 const SigninPage = () => {
+    const [email, setEmail] = useState('');
+    const [isEmailValid, setIsEmailValid] = useState(null);
+    const [emailNote, setEmailNote] = useState('')
+
+    const handleEmailChange = (e) => {
+        const value = e.target.value;
+        setEmail(value);
+        const [isValid, note] = validateEmail(value);
+        setEmailNote(note);
+        setIsEmailValid(isValid);
+    };
+
+    const [password, setPassword] = useState('');
+    const [isPasswordValid, setIsPasswordValid] = useState(null);
+    const [passwordNote, setPasswordNote] = useState('')
+
+    const handlePasswordChange = (e) => {
+        const value = e.target.value;
+        setPassword(value);
+        const [isValid, password] = validatePassword(value);
+        setPasswordNote(password);
+        setIsPasswordValid(isValid);
+    };
+
     return (
-        <div className="min-h-screen flex items-center justify-center w-full dark:bg-gray-950">
-            <div className="w-full max-w-lg p-4 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 my-auto">
-                <FeaturedLogo />    
-                <form className="space-y-6" action="#">
-                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
-                    <div>
-                        <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                        <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
-                    </div>
-                    <div>
-                        <label htmlFor="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                        <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
-                    </div>
+        <div className="min-h-screen flex flex-col items-center justify-center space-y-20 w-full dark:bg-gray-900
+            lg:items-center lg:justify-around lg:flex-row lg:space-y-0"
+        >
+            <FeaturedLogo />
+            <div className="w-full md:max-w-xl max-w-md p-6 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800">
+                <form className="space-y-3" action="#">
+                    <h4 className="text-2xl font-medium text-gray-900 dark:text-white mb-6">Sign in to your account</h4>
+                    
+                    <ValidatedInput
+                        label="Your email"
+                        type="email"
+                        placeholder="name@example.com"
+                        value={email}
+                        note={emailNote}
+                        onValueChange={handleEmailChange}
+                        isValid={isEmailValid}
+                    />
+                    <ValidatedInput
+                        label="Your password"
+                        type="password"
+                        placeholder="••••••••"
+                        value={password}
+                        note={passwordNote}
+                        onValueChange={handlePasswordChange}
+                        isValid={isPasswordValid}
+                    />
                     <div className="flex items-start">
                         <div className="flex items-start">
                             <div className="flex items-center h-5">
