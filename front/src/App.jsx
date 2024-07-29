@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import SigninPage from "./pages/SigninPage";
 import Videos from "./pages/Videos";
 import Images from "./pages/Images";
+import Music from "./pages/Music";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="videos" element={<Videos />} />
           <Route path="images" element={<Images />} />
+          <Route path="music" element={<Music />} />
         </Route>
       </Routes>
     </BrowserRouter>
