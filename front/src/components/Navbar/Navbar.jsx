@@ -4,8 +4,14 @@ import Logo from "./Logo";
 import ProfileMenu from "./ProfileMenu";
 import NavList from "./NavList";
 
+<<<<<<< HEAD
+const Navbar = () => {
+
+  const [searchQuery, setSearchQuery] = useState('');
+=======
 const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
+>>>>>>> 4d749dbbee6ba9e06e83f474c4364b125d087361
 
   const handleSearch = (event) => {
     setSearchQuery(event.target.value);
@@ -136,4 +142,8 @@ const NavBar = () => {
   );
 };
 
+<<<<<<< HEAD
+export default Navbar;
+=======
 export default NavBar;
+>>>>>>> 4d749dbbee6ba9e06e83f474c4364b125d087361
