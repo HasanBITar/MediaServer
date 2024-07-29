@@ -1,6 +1,6 @@
 import HomeSection from "../components/containers/HomeSection";
 import VideoCard from "../components/cards/VideoCard";
-import ImageCard from "../components/cards/ImageCard";
+import ImageCard from "../components/cards/Images/ImageCard";
 import AudioCard from "../components/cards/AudioCard";
 import BookCard from "../components/cards/BookCard";
 
