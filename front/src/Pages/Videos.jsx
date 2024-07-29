@@ -1,11 +1,8 @@
-import HomeSection from "../components/containers/HomeSection";
 import VideoCard from "../components/cards/VideoCard";
-import ImageCard from "../components/cards/ImageCard";
-import AudioCard from "../components/cards/AudioCard";
-import BookCard from "../components/cards/BookCard";
+import HomeSection from "../components/containers/HomeSection";
 
-const HomePage = () => {
-  const data = [
+function Videos() {
+  const MovieData = [
     {
       video_id: "svd329esvdsdv1",
       thumbnail: "images/thumb.jpeg",
@@ -23,6 +20,8 @@ const HomePage = () => {
       durationWatched: 400,
       createDate: "12/10/2024",
     },
+  ];
+  const ShowData = [
     {
       video_id: "svd329esvdsdv3",
       thumbnail: "/images/thumb.jpeg",
@@ -48,10 +47,37 @@ const HomePage = () => {
       createDate: "12/10/2024",
     },
   ];
+  const VideoData = [
+    {
+      video_id: "svd329esvdsdv3",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 0,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv4",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv5",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+  ];
+
   return (
-    <>
-      <HomeSection title={"Recent Videos"}>
-        {data.map((item) => (
+    <div>
+      <HomeSection title={"Movies"}>
+        {MovieData.map((item) => (
           <VideoCard
             key={item.video_id}
             id={item.video_id}
@@ -64,54 +90,36 @@ const HomePage = () => {
           />
         ))}
       </HomeSection>
-
-      {/* <hr className="my-7 border-t-2 border-gray-700" /> */}
-
-      <HomeSection title={"Recent Music"}>
-        {data.map((item) => (
-          <AudioCard
+      <HomeSection title={"Shows"}>
+        {ShowData.map((item) => (
+          <VideoCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
             title={item.fileName}
-            type="PDF"
-            createDate="12/10/2024"
+            duration={item.duration}
+            durationWatched={item.durationWatched}
+            createDate={item.createDate}
             all={false}
           />
         ))}
       </HomeSection>
-
-      {/* <hr className="my-7 border-t-2 border-gray-700" /> */}
-
-      <HomeSection title={"Recent Photos"}>
-        {data.map((item) => (
-          <ImageCard
+      <HomeSection title={"Other Videos"}>
+        {VideoData.map((item) => (
+          <VideoCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
             title={item.fileName}
-            type="PDF"
-            createDate="12/10/2024"
-            all={false}
+            duration={item.duration}
+            durationWatched={item.durationWatched}
+            createDate={item.createDate}
+            all={true}
           />
         ))}
       </HomeSection>
-
-      <HomeSection title={"Recent Books"}>
-        {data.map((item) => (
-          <BookCard
-            key={item.video_id}
-            id={item.video_id}
-            thumbnail={item.thumbnail}
-            title={item.fileName}
-            type="PDF"
-            createDate="12/10/2024"
-            all={false}
-          />
-        ))}
-      </HomeSection>
-    </>
+    </div>
   );
-};
+}
 
-export default HomePage;
+export default Videos;
