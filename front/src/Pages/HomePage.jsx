@@ -1,5 +1,5 @@
 
-import HomeSection from "../components/container/HomeSection";
+import HomeSection from "../components/containers/HomeSection";
 import VideoCard from "../components/cards/VideoCard";
 import ImageCard from "../components/cards/ImageCard";
 import AudioCard from "../components/cards/AudioCard";

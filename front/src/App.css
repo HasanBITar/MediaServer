@@ -53,7 +53,7 @@
 }
 
 body {
-  background-color: #111827;
+  @apply bg-gray-900 
 }
 
 @keyframes spin {
@@ -67,7 +67,7 @@ body {
 }
 
 .rotate-continuous {
-  animation: spin 4s linear infinite paused;
+  animation: spin 6s linear infinite paused;
 }
 
 .rotate-continuous:hover {
@@ -78,11 +78,12 @@ body {
   min-height: 100vh;
   max-height: fit-content;
 }
+*/
 
 #root {
   min-height: 100vh;
-  max-height: fit-content;
-} */
+  height: fit-content;
+} 
 
 .hide-scroll-bar {
   -ms-overflow-style: none;
