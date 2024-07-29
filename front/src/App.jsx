@@ -4,6 +4,7 @@ import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import SigninPage from "./pages/SigninPage";
 import Videos from "./pages/Videos";
+import Images from "./pages/Images";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
           <Route path="videos" element={<Videos />} />
+          <Route path="images" element={<Images />} />
         </Route>
       </Routes>
     </BrowserRouter>
