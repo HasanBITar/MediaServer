@@ -1,10 +1,7 @@
-import HomeSection from "../components/containers/HomeSection";
-import VideoCard from "../components/cards/VideoCard";
-import ImageCard from "../components/cards/ImageCard";
 import AudioCard from "../components/cards/AudioCard";
-import BookCard from "../components/cards/BookCard";
+import HomeSection from "../components/containers/HomeSection";
 
-const HomePage = () => {
+function Music() {
   const data = [
     {
       video_id: "svd329esvdsdv1",
@@ -47,27 +44,75 @@ const HomePage = () => {
       durationWatched: 400,
       createDate: "12/10/2024",
     },
+    {
+      video_id: "svd329esvdsdv2",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv3",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 0,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv4",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv5",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv2",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv3",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 0,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv4",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
+    {
+      video_id: "svd329esvdsdv5",
+      thumbnail: "/images/thumb.jpeg",
+      fileName: "random video",
+      duration: 1000,
+      durationWatched: 400,
+      createDate: "12/10/2024",
+    },
   ];
+
   return (
-    <>
-      <HomeSection title={"Recent Videos"}>
-        {data.map((item) => (
-          <VideoCard
-            key={item.video_id}
-            id={item.video_id}
-            thumbnail={item.thumbnail}
-            title={item.fileName}
-            duration={item.duration}
-            durationWatched={item.durationWatched}
-            createDate={item.createDate}
-            all={false}
-          />
-        ))}
-      </HomeSection>
-
-      {/* <hr className="my-7 border-t-2 border-gray-700" /> */}
-
-      <HomeSection title={"Recent Music"}>
+    <div>
+      <HomeSection title={"Artists"}>
         {data.map((item) => (
           <AudioCard
             key={item.video_id}
@@ -80,12 +125,9 @@ const HomePage = () => {
           />
         ))}
       </HomeSection>
-
-      {/* <hr className="my-7 border-t-2 border-gray-700" /> */}
-
-      <HomeSection title={"Recent Photos"}>
+      <HomeSection title={"Albums"}>
         {data.map((item) => (
-          <ImageCard
+          <AudioCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
@@ -96,10 +138,9 @@ const HomePage = () => {
           />
         ))}
       </HomeSection>
-
-      <HomeSection title={"Recent Books"}>
+      <HomeSection title={"Playlists"}>
         {data.map((item) => (
-          <BookCard
+          <AudioCard
             key={item.video_id}
             id={item.video_id}
             thumbnail={item.thumbnail}
@@ -110,8 +151,21 @@ const HomePage = () => {
           />
         ))}
       </HomeSection>
-    </>
+      <HomeSection title={"All Music"}>
+        {data.map((item) => (
+          <AudioCard
+            key={item.video_id}
+            id={item.video_id}
+            thumbnail={item.thumbnail}
+            title={item.fileName}
+            type="PDF"
+            createDate="12/10/2024"
+            all={true}
+          />
+        ))}
+      </HomeSection>
+    </div>
   );
-};
+}
 
-export default HomePage;
+export default Music;

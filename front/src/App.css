@@ -46,14 +46,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   /* transition: 3s ease-in-out; */
   margin: 0;
 }
 
 body {
-  @apply bg-gray-900 
+  @apply bg-gray-900;
 }
 
 @keyframes spin {
@@ -67,11 +66,17 @@ body {
 }
 
 .rotate-continuous {
-  animation: spin 6s linear infinite paused;
+  display: inline-block;
+  transition: transform 0.5s ease;
 }
 
 .rotate-continuous:hover {
+  animation: spin 6s linear infinite;
   animation-play-state: running;
+}
+
+.custom-scrollbar {
+  padding-bottom: 3rem;
 }
 
 /* body {
@@ -83,7 +88,7 @@ body {
 #root {
   min-height: 100vh;
   height: fit-content;
-} 
+}
 
 .hide-scroll-bar {
   -ms-overflow-style: none;
