@@ -88,9 +88,8 @@ const HomeSection = ({ title, children }) => {
     >
       <h1 className="flex pb-5 font-bold text-4xl text-white">{title}</h1>
       <div
-        className="flex overflow-x-scroll custom-scrollbar"
+        className="flex overflow-x-scroll hide-scroll-bar"
         ref={scrollContainerRef}
-        style={{ overflowX: "auto", whiteSpace: "nowrap" }}
       >
         <div className="flex flex-nowrap space-x-7">{children}</div>
       </div>
