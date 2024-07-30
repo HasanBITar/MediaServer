@@ -10,19 +10,58 @@ export const AUTH_STATUS = {
   failed: 'failed'
 }
 
+const setToken = (token) => {
+  localStorage.setItem('authToken', token);
+}
+
+export const getToken = () => {
+  return localStorage.getItem('authToken');
+}
+
+const apiClient = axios.create({ baseURL: BACKEND_API });
+
+export const login = createAsyncThunk(API.signin, async (credentials, { rejectWithValue }) => {
+  console.log('Logging in:', credentials);
+  try {
+    const response = await apiClient.post(API.signin, credentials);
+    return response.data;
+  } catch (err) {
+    console.error(err);
+    let message = 'Internal server error';
+    if (err.response && err.response.status === 401) {
+      message = err.response.data.message || 'Invalid email or password';
+    }
+    return rejectWithValue(message);
+  }
+});
+
+export const signup = createAsyncThunk(API.signup, async (user) => {
+  console.log('Signinng up: ', API.signup, user)
+  const response = await apiClient.post(API.signup, user);
+  return response.data;
+})
+
+export const verifyToken = createAsyncThunk(API.verifyToken, async () => {
+  const token = getToken()
+  if (!token) {
+    throw new Error('No token found');
+  }
+
+  const response = await apiClient.get(API.verifyToken, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  return response.data;
+});
+
+
 const initialState = {
   user: null,
   status: AUTH_STATUS.idle,
   error: null,
 };
-
-
-const apiClient = axios.create({ baseURL: BACKEND_API });
-
-export const login = createAsyncThunk(API.signin, async (credentials) => {
-  const response = await apiClient.post(API.signin, credentials);
-  return response.data;
-});
 
 const authSlice = createSlice({
   name: 'auth',
@@ -34,20 +73,49 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      //Login
       .addCase(login.pending, (state) => {
         state.status = AUTH_STATUS.loading;
       })
       .addCase(login.fulfilled, (state, action) => {
         state.status = AUTH_STATUS.succeeded;
         state.user = action.payload;
+        setToken(action.payload.token);
       })
       .addCase(login.rejected, (state, action) => {
         state.status = AUTH_STATUS.failed;
-        state.error = action.error.message;
+        console.log(action);
+        state.error = action.payload || action.error.message;
+      })
+      // Signup
+      .addCase(signup.pending, (state) => {
+        state.status = AUTH_STATUS.loading;
+      })
+      .addCase(signup.fulfilled, (state, action) => {
+        state.status = AUTH_STATUS.succeeded;
+        state.user = action.payload;
+        setToken(action.payload.token);
+      })
+      .addCase(signup.rejected, (state, action) => {
+        state.status = AUTH_STATUS.failed;
+        console.log(action);
+        state.error = action.payload || action.error.message;
+      })
+      // Verify
+      .addCase(verifyToken.pending, (state) => {
+        state.status = AUTH_STATUS.loading;
+      })
+      .addCase(verifyToken.fulfilled, (state, action) => {
+        state.status = AUTH_STATUS.succeeded;
+        state.user = action.payload;
+      })
+      .addCase(verifyToken.rejected, (state) => {
+        state.status = AUTH_STATUS.idle;
+        state.user = null;
+        state.error = null;
+        localStorage.removeItem('authToken');
       });
   },
 });
-
-export const { logout } = authSlice.actions;
 
 export default authSlice.reducer;

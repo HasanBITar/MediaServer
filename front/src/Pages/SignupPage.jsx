@@ -6,16 +6,19 @@ import FeaturedLogo from "../components/navbar/FeaturedLogo";
 import ValidatedInput from "../components/inputs/ValidatedInput";
 import Button from "../components/buttons/Button";
 
-import { login, AUTH_STATUS } from '../store/authSlice';
-import { validateEmail, validatePassword } from "../utils/validators";
+import { signup, AUTH_STATUS } from '../store/authSlice';
+import { validateEmail, validatePassword, validateText } from "../utils/validators";
 
-const SigninPage = () => {
+const SignupPage = () => {
 
     const [email, setEmail] = useState('');
     const [isEmailValid, setIsEmailValid] = useState(null);
 
     const [password, setPassword] = useState('');
     const [isPasswordValid, setIsPasswordValid] = useState(null);
+
+    const [username, setUsername] = useState('');
+    const [isUsernameValid, setIsUsernameValid] = useState(null);
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -35,7 +38,7 @@ const SigninPage = () => {
         console.log('submitted', email, password);
         if (isEmailValid && isPasswordValid) {
             console.log('Dispatching login', { email, password });
-            dispatch(login({ email, password }));
+            dispatch(signup({ email, password }));
         } else {
             setErrorMessage('Check your inputs.')
         }
@@ -48,7 +51,17 @@ const SigninPage = () => {
             <FeaturedLogo />
             <div className="w-full md:max-w-xl sm:max-w-md max-w-sm p-6 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800">
                 <form className="space-y-3" onSubmit={handleFormSubmit}>
-                    <h4 className="text-2xl font-medium text-gray-900 dark:text-white mb-6">Sign in to your account</h4>
+                    <h4 className="text-2xl font-medium text-gray-900 dark:text-white mb-6">Creat your account</h4>
+                    <ValidatedInput
+                        label="Your Name"
+                        placeholder="Linus Torvalds"
+                        type="text"
+                        value={username}
+                        setValue={setUsername}
+                        isValid={isUsernameValid}
+                        setIsValid={setIsUsernameValid}
+                        validator={validateText}
+                    />
 
                     <ValidatedInput
                         label="Your email"
@@ -75,7 +88,7 @@ const SigninPage = () => {
                         className="w-full"
                         isLoading={authState.status === AUTH_STATUS.loading}
                     >
-                        Login to your account
+                        Create your account
                     </Button>
 
                     <p className="text-sm text-red-600 dark:text-red-500 h-5 text-center">
@@ -85,10 +98,7 @@ const SigninPage = () => {
                     </p>
                     <div className="flex items-center justify-between">
                         <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Not registered? <Link to="/signup" className="text-blue-700 hover:underline dark:text-blue-500">Create account</Link>
-                        </div>
-                        <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            <Link to="/reset-password" className="ms-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</Link>
+                            Have an account? <Link to="/signup" className="text-blue-700 hover:underline dark:text-blue-500">Signin</Link>
                         </div>
                     </div>
                 </form>
@@ -97,4 +107,4 @@ const SigninPage = () => {
     )
 }
 
-export default SigninPage;
+export default SignupPage;

@@ -1,19 +1,27 @@
 const { Pool } = require('pg');
 const fs = require('fs');
 
-const pool = new Pool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
+const config = require('./config');
+
+const dbconfig = config.env.DEFAULT_DB === 'local' ? {
+  user: config.env.LOCAL_DB_USER,
+  password: config.env.LOCAL_DB_PASSWORD,
+  host: config.env.LOCAL_DB_HOST,
+  port: config.env.LOCAL_DB_PORT,
+  database: 'openMedia',
+} : {
+  user: config.env.REMOTE_DB_USER,
+  password: config.env.REMOTE_DB_PASSWORD,
+  host: config.env.REMOTE_DB_HOST,
+  port: config.env.REMOTE_DB_PORT,
   database: 'openMedia',
   ssl: {
     rejectUnauthorized: true,
     ca: fs.readFileSync('./.ca.pem', 'utf8'),
   },
-});
+}
 
-
+const pool = new Pool(dbconfig);
 
 module.exports = {
   query: (text, params) => pool.query(text, params),
