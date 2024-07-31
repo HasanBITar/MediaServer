@@ -15,7 +15,8 @@ export default {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/flowbite/**/*.js"
+    "./node_modules/flowbite/**/*.js",
+    "node_modules/flowbite-react/lib/esm/**/*.js"
   ],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
@@ -39,7 +40,7 @@ export default {
   },
   plugins: [
     require('flowbite/plugin'),
-    // require('tailwind-scrollbar'),
+    require('tailwind-scrollbar'),
   ],
 }
 
