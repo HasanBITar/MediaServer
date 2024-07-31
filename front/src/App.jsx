@@ -18,12 +18,11 @@ import { verifyToken } from "./store/authSlice";
 
 
 function App() {
-
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(verifyToken());
   }, [dispatch]);
+
 
   return (
     <BrowserRouter>

@@ -3,7 +3,7 @@ import { formatString, formatDuration, formatDate } from "../../utils/helpers";
 
 const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate }) => {
     const progress = durationWatched / duration * 100;
-    const formatedTitle = formatString(title, 80);
+    const formatedTitle = formatString(title, 65);
     const formatedDuration = formatDuration(duration);
     const formatedDate = formatDate(createDate);
     return (
