@@ -40,7 +40,7 @@ const ValidatedInput = ({ label, type, placeholder, value, setValue, isValid, se
                         : 'focus:ring-gray-400 focus:border-gray-400 text-gray-100'
                     }`}
                 placeholder={placeholder}
-                autocomplete="off"
+                autoComplete="off"
             />
             {isValid === false && (
                 <p className="mt-2 text-sm text-red-600 dark:text-red-500 h-5">

@@ -6,43 +6,68 @@ const config = require('../config')
 const userModel = require('../models/userModel');
 const errorRespone = require('../utils')
 
+const generateToken = (userId) => {
+    const token = jwt.sign({ userId: userId }, config.env.JWT_SECRET, {
+        expiresIn: '24h',
+    });
+    return token;
+}
+
 const signupUser = async (req, res) => {
-    const userData = req.body;
-    const [ok, result] = await userModel.addUser(userData);
+    try {
+        const userData = req.body;
+        let [ok, result] = await userModel.getUserByEmail(userData.email);
+        if (ok && result !== null) {
+            return res.status(401).json({ message: 'The email is already registered', error: true })
+        }
 
-    if (!ok) return await errorRespone(result, res);
-    res.status(200).json(result);
+        [ok, result] = await userModel.addUser(userData);
 
+        if (!ok) return await errorRespone(result, res);
+
+        const token = generateToken(result.user_id);
+        res.status(200).json({ ...result, token });
+    }
+    catch (err) {
+        await errorRespone(err, res);
+    }
 }
 
 const signinUser = async (req, res) => {
-    const { email, password } = req.body;
-    const [ok, result] = await userModel.getUserByEmail(email);
-    
-    if (!ok) return await errorRespone(result, res);
+    try {
 
-    if (result === null) {
-        return res.status(401).json({ message: 'The email is not registered' });
+        const { email, password } = req.body;
+        const [ok, result] = await userModel.getUserByEmail(email);
+
+        if (!ok) return await errorRespone(result, res);
+
+        if (result === null) {
+            return res.status(401).json({ message: 'The email is not registered', error: true });
+        }
+
+        const isValid = await bcrypt.compare(password, result.password);
+        if (!isValid) {
+            return res.status(401).json({ message: 'Incorrect password', error: true });
+        }
+
+        const token = generateToken(result.user_id);
+
+        res.status(200).json({ ...result, token });
     }
-
-    const isValid = await bcrypt.compare(password, result.password);
-    if (!isValid) {
-        return res.status(401).json({ message: 'Incorrect password' });
+    catch (err) {
+        await errorRespone(err, res);
     }
-    
-    console.log(result);
-
-    const token = jwt.sign({ userId: result.user_id }, config.env.JWT_SECRET, {
-        expiresIn: '24h',
-    });
-
-    res.status(200).json({ ...result, token });
 }
 
 const verifyToken = async (req, res) => {
-    const [ok, result] = await userModel.getUserById(req.userId);
-    if(!ok) return await errorRespone(result, res);
-    res.status(200).json(result);
+    try{
+        const [ok, result] = await userModel.getUserById(req.userId);
+        if (!ok) return await errorRespone(result, res);
+        res.status(200).json(result);
+    }
+    catch (err) {
+        await errorRespone(err, res);
+    }
 }
 
-module.exports = { signupUser, signinUser, verifyToken};
+module.exports = { signupUser, signinUser, verifyToken };

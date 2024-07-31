@@ -35,10 +35,20 @@ export const login = createAsyncThunk(API.signin, async (credentials, { rejectWi
   }
 });
 
-export const signup = createAsyncThunk(API.signup, async (user) => {
-  console.log('Signinng up: ', API.signup, user)
-  const response = await apiClient.post(API.signup, user);
-  return response.data;
+export const signup = createAsyncThunk(API.signup, async (user, { rejectWithValue }) => {
+  try {
+    console.log('Signinng up: ', API.signup, user)
+    const response = await apiClient.post(API.signup, user);
+    return response.data;
+  }
+  catch (err) {
+    console.error(err);
+    let message = 'Internal server error';
+    if (err.response && err.response.status === 401) {
+      message = err.response.data.message || 'Invalid email or password';
+    }
+    return rejectWithValue(message);
+  }
 })
 
 export const verifyToken = createAsyncThunk(API.verifyToken, async () => {

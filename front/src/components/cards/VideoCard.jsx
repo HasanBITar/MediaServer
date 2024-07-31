@@ -7,8 +7,8 @@ const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate
     const formatedDuration = formatDuration(duration);
     const formatedDate = formatDate(createDate);
     return (
-        <Link to={`/view/${id}`} className="inline-block w-full rounded-xl md:w-80 lg:w-96 md:flex-auto flex-none ">
-            <div className="relative w-full overflow-hidden rounded-xl shadow-md bg-gray-800">
+        <Link to={`/view/${id}`} className="inline-block w-[88vw] xs:w-full sm:w-full rounded-lg md:w-80 lg:w-96 md:flex-auto flex-none transition-colors ease-in-out"> 
+            <div className="relative w-full overflow-hidden rounded-lg shadow-md bg-gray-800">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '56.25%' }}>
                     <img

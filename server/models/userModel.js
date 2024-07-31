@@ -3,9 +3,9 @@ const bcrypt = require('bcryptjs');
 const db = require('../db');
 
 const addUser = async ({ username, email, password, profile_photo = null, is_admin = false }) => {
-    const hashedPassword = await bcrypt.hash(password, 10);
-    email = email.toLowerCase()
     try {
+        const hashedPassword = await bcrypt.hash(password, 10);
+        email = email.toLowerCase()
         const result = await db.query(
             'INSERT INTO "user" (username, email, password, profile_photo, is_admin) VALUES ($1, $2, $3, $4, $5) RETURNING *',
             [username, email, hashedPassword, profile_photo, is_admin]
@@ -19,7 +19,6 @@ const addUser = async ({ username, email, password, profile_photo = null, is_adm
 }
 
 const getUserById = async (id) => {
-    console.log('userid', id)
     try {
         const user = await db.query('SELECT * FROM "user" WHERE user_id = $1', [id]);
         if (user.rows.length === 0) {
@@ -36,7 +35,7 @@ const getUserById = async (id) => {
 
 const getUserByEmail = async (email) => {
     email = email.toLowerCase()
-    
+
     try {
         const user = await db.query('SELECT * FROM "user" WHERE email = $1', [email]);
         if (user.rows.length === 0) {
@@ -50,8 +49,8 @@ const getUserByEmail = async (email) => {
     }
 }
 
-module.exports = { 
-    addUser, 
+module.exports = {
+    addUser,
     getUserById,
     getUserByEmail,
 }
