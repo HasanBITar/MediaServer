@@ -46,7 +46,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   /* transition: 3s ease-in-out; */
   margin: 0;

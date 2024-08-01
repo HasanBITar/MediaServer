@@ -1,7 +1,5 @@
 import { useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
-import { getToken } from './authSlice';
-
 
 const ProtectedRoute = () => {
     const authState = useSelector(state => state.auth);

@@ -24,7 +24,7 @@ const SigninPage = () => {
 
     useEffect(() => {
         if (authState.status === AUTH_STATUS.succeeded) {
-            navigate('/home')
+            navigate('/videos') // TODO Fix redirection on reload
         } else if (authState.status === AUTH_STATUS.failed) {
             setErrorMessage(authState.error || 'Login failed. Please try again.');
         }

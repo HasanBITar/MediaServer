@@ -1,22 +1,8 @@
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
-
-
-// tailwind.config.js
 export default {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,jsx,ts,tsx}",
     "./node_modules/flowbite/**/*.js",
-    "node_modules/flowbite-react/lib/esm/**/*.js"
+    "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   darkMode: 'media', // or 'media' or 'class'
   theme: {

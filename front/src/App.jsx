@@ -15,6 +15,7 @@ import Documents from "./pages/Documents";
 
 import ProtectedRoute from "./store/ProtectedRoute";
 import { verifyToken } from "./store/authSlice";
+import Random from "./random";
 
 
 function App() {
@@ -23,13 +24,10 @@ function App() {
     dispatch(verifyToken());
   }, [dispatch]);
 
-
+  // return (<Random />)
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signin" element={<SigninPage />} />
-        <Route path="/signup" element={<SignupPage />} />
-        <Route path="/" element={<LandingPage />} />
         <Route element={<ProtectedRoute />}>
           <Route element={<MainLayout />}>
             <Route path="home" element={<HomePage />} />
@@ -39,6 +37,10 @@ function App() {
             <Route path="documents" element={<Documents />} />
           </Route>
         </Route>
+        <Route path="/signin" element={<SigninPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/" element={<LandingPage />} exact />
+        {/* <Route path="/" element={<404 />} exact /> */}
       </Routes>
     </BrowserRouter>
   );

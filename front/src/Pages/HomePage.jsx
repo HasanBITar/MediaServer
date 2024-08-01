@@ -3,6 +3,7 @@ import VideoCard from "../components/cards/VideoCard";
 import ImageCard from "../components/cards/ImageCard";
 import AudioCard from "../components/cards/AudioCard";
 import BookCard from "../components/cards/BookCard";
+import VideoPlayListCard from "../components/cards/VideoPlayListCard";
 
 const HomePage = () => {
   const data = [
@@ -51,6 +52,8 @@ const HomePage = () => {
   return (
     <>
       <HomeSection title={"Recent Videos"}>
+        <VideoPlayListCard></VideoPlayListCard>
+
         {data.map((item) => (
           <VideoCard
             key={item.video_id}

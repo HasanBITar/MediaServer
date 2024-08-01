@@ -1,6 +1,8 @@
 import VideoCard from "../components/cards/VideoCard";
 import HomeSection from "../components/containers/HomeSection";
 
+import SidebarLayout from "../layouts/SidebarLayout";
+
 function Videos() {
   const MovieData = [
     {
@@ -75,50 +77,7 @@ function Videos() {
   ];
 
   return (
-    <div>
-      <HomeSection title={"Movies"}>
-        {MovieData.map((item) => (
-          <VideoCard
-            key={item.video_id}
-            id={item.video_id}
-            thumbnail={item.thumbnail}
-            title={item.fileName}
-            duration={item.duration}
-            durationWatched={item.durationWatched}
-            createDate={item.createDate}
-            all={false}
-          />
-        ))}
-      </HomeSection>
-      <HomeSection title={"Shows"}>
-        {ShowData.map((item) => (
-          <VideoCard
-            key={item.video_id}
-            id={item.video_id}
-            thumbnail={item.thumbnail}
-            title={item.fileName}
-            duration={item.duration}
-            durationWatched={item.durationWatched}
-            createDate={item.createDate}
-            all={false}
-          />
-        ))}
-      </HomeSection>
-      <HomeSection title={"Other Videos"}>
-        {VideoData.map((item) => (
-          <VideoCard
-            key={item.video_id}
-            id={item.video_id}
-            thumbnail={item.thumbnail}
-            title={item.fileName}
-            duration={item.duration}
-            durationWatched={item.durationWatched}
-            createDate={item.createDate}
-            all={true}
-          />
-        ))}
-      </HomeSection>
-    </div>
+    <SidebarLayout></SidebarLayout>
   );
 }
 
