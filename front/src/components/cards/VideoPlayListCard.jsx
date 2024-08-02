@@ -8,6 +8,7 @@ const VideoPlayListCard = ({ id, thumbnail, title, duration, durationWatched, cr
   const formatedDuration = formatDuration(duration);
   const formatedDate = formatDate(createDate);
   return (
+    // TODO customize playlist card
     <Link to={`/view/${id}`} className="snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-72 md:w-80 lg:w-96">
       <div className="relative overflow-hidden rounded-md shadow-md bg-gray-800 shrink-0 image-container">
         {/* Thumbnail */}
@@ -22,13 +23,7 @@ const VideoPlayListCard = ({ id, thumbnail, title, duration, durationWatched, cr
               <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M9 8h10M9 12h10M9 16h10M4.99 8H5m-.02 4h.01m0 4H5" />
             </svg>
           </span>
-          {/* Watched Line Progress */}
-          <div className={`w-full h-1 bg-gray-300 rounded-full absolute bottom-0 ${progress < 3 ? 'invisible' : ''}`}>
-            <div
-              className="h-full bg-blue-700 rounded-full"
-              style={{ width: `${progress}%` }}
-            ></div>
-          </div>
+          
         </div>
       </div>
       {/* Video Info */}

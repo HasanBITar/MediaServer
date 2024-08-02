@@ -10,6 +10,9 @@ export default {
       width: {
         'card-lg': '40rem',
       },
+      height: {
+        'subpage': 'calc(100vh - 5.5rem)',
+      },
       boxShadow: {
         'down-8': '0 8px 0 0 black',
       },

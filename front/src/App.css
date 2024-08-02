@@ -52,7 +52,7 @@
 }
 
 body {
-  @apply bg-gray-900 
+  @apply bg-gray-900
 }
 
 @keyframes spin {
@@ -82,7 +82,7 @@ body {
 #root {
   min-height: 100vh;
   height: fit-content;
-} 
+}
 
 .hide-scroll-bar {
   -ms-overflow-style: none;
@@ -99,16 +99,32 @@ body {
   position: absolute;
   width: 80%;
   height: 10%;
-  background: rgba(0, 0, 0, 0.2); /* Adjust the shade color and opacity as needed */
+  background: rgb(226, 6, 6, 0);
+  /* Adjust the shade color and opacity as needed */
   left: 50%;
+  top: 0%;
   transform: translateX(-50%);
+  transform: translateY(-100%);
   border-radius: 10px;
 }
 
 .image-container::before {
-  top: -5%; /* Adjust the position of the first shade */
+  top: -5%;
+  /* Adjust the position of the first shade */
 }
 
 .image-container::after {
-  top: 5%; /* Adjust the position of the second shade */
+  top: 5%;
+  /* Adjust the position of the second shade */
+}
+
+.two-line-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp:2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: calc(1em * 2 * 1.5);
+  /* 2 lines with 1.5 line height */
 }

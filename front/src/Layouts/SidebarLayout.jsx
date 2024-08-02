@@ -2,7 +2,7 @@ const SidebarLayout = ({ sidebar, children }) => {
     return (
         <>
             <aside id="sidebar-multi-level-sidebar" className="fixed flex top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full md:translate-x-0" aria-label="Sidebar">
-                <div className="flex-1 m-3 mt-16 overflow-y-auto rounded bg-gray-800 p-2 lg:p-4">
+                <div className="flex-1 m-3 mt-16 overflow-y-auto rounded-md bg-gray-800 p-2 lg:p-4">
                     <ul className="space-y-2 font-medium">
                         <li>
                             <a href="#" className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
@@ -91,10 +91,17 @@ const SidebarLayout = ({ sidebar, children }) => {
                 </div>
             </aside>
 
-            <div className="bg-gray-800 rounded-md md:ml-[15.25rem] relative h-full">
-                {children}
+            <div className="md:ml-[15.25rem]">
+                <div className="not-prose relative rounded-md overflow-hidden dark:bg-gray-800">
+                    <div className="absolute inset-0"></div>
+                    <div className="relative rounded-md overflow-auto">
+                        <div className="overscroll-contain overflow-auto h-subpage mb-3 hide-scroll-bar">
+                            {children}
+                        </div>
+                    </div>
+                    <div className="absolute inset-0 pointer-events-none rounded-md"></div>
+                </div>
             </div>
-
         </>
     )
 }

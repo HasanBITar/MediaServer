@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import { formatString, formatDuration, formatDate } from "../../utils/helpers";
 
-const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate }) => {
+const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate, scroll=true }) => {
     const progress = durationWatched / duration * 100;
     const formatedTitle = formatString(title, 65);
     const formatedDuration = formatDuration(duration);
     const formatedDate = formatDate(createDate);
     return (
-        <Link to={`/view/${id}`} className="snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-72 md:w-80 lg:w-96">
+        <Link to={`/view/${id}`} className={scroll? "snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-72 md:w-80 lg:w-96": ""}>
             <div className="relative overflow-hidden rounded-md shadow-md bg-gray-800 shrink-0">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '56.25%' }}>
@@ -31,7 +31,7 @@ const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate
             </div>
             {/* Video Info */}
             <div className="mt-2 px-1">
-                <h3 className="text-lg font-medium text-white">{formatedTitle}</h3>
+                <h3 className="text-lg font-medium text-white two-line-text">{formatedTitle}</h3>
                 <p className="text-md font-medium text-gray-400">{formatedDate}</p>
             </div>
         </Link>
