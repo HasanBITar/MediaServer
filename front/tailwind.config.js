@@ -2,13 +2,16 @@ export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./node_modules/flowbite/**/*.js",
-    "node_modules/flowbite-react/lib/esm/**/*.js",
+    "./node_modules/flowbite-react/lib/esm/**/*.js",
   ],
-  darkMode: 'media', // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
     extend: {
       width: {
         'card-lg': '40rem',
+      },
+      boxShadow: {
+        'down-8': '0 8px 0 0 black',
       },
       colors: {
         gray: {

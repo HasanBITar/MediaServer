@@ -26,7 +26,7 @@ const ProfielMenu = () => {
         />
       </button>
       {isOpen && (
-        <div className="z-50 text-base list-non bg-gray-menu rounded-md shadow-lg transition-opacity duration-300 ease-in-out p-1 absolute top-12 lg:right-2 -right-8">
+        <div className="z-50 text-base list-non bg-gray-menu rounded-md shadow-lg transition-opacity duration-300 ease-in-out p-1 fixed top-16 lg:right-2 right-4">
           <div className="px-4 py-3">
             <span className="block text-sm text-gray-900 dark:text-white">{username}</span>
             <span className="block text-sm text-gray-500 truncate dark:text-gray-400">{email}</span>

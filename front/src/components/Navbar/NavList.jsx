@@ -20,14 +20,14 @@ const NavList = ({ children }) => {
     ];
 
     return (
-        <ul className="flex flex-col lg:p-0 mt-2 font-medium rounded-md lg:space-x-8 lg:flex-row lg:mt-0">
+        <ul className="flex flex-col lg:p-0 mt-2 lg:font-medium rounded-md lg:space-x-8 lg:flex-row lg:mt-0">
             {navItems.map((item) => (
                 <li key={item.label}>
                     <Link
                         to={item.path}
                         className={`block py-2 px-3 rounded lg:p-0 lg:dark:hover:text-blue-500 dark:border-gray-700
                             ${currentPage === item.path ?
-                                'text-white bg-blue-700 lg:bg-transparent lg:text-blue-700 lg:dark:text-blue-500 font-bold'
+                                'text-white bg-blue-700 lg:bg-transparent lg:text-blue-700 lg:dark:text-blue-500 lg:font-bold'
                                 :
                                 'text-gray-900 lg:hover:bg-transparent lg:hover:text-blue-700 lg:p-0 dark:text-white lg:dark:hover:text-blue-500 dark:hover:bg-gray-hover dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700'
                             }`}
