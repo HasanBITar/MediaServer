@@ -1,42 +1,75 @@
+const data = [
+    {
+        video_id: "svd329esvdsdv1",
+        thumbnail: "images/thumb.jpeg",
+        fileName:
+            "random video sdvksdv sdvksdv sdv kblos osiw isvd svvsd iwev svdisdv sjv jsdvdj sdvj jsvd jwro q;b wo wjv wvh",
+        duration: 1000,
+        durationWatched: 20,
+        createDate: "12/10/2024",
+    },
+    {
+        video_id: "svd329esvdsdv2",
+        thumbnail: "/images/thumb.jpeg",
+        fileName: "random video",
+        duration: 1000,
+        durationWatched: 400,
+        createDate: "12/10/2024",
+    },
+    {
+        video_id: "svd329esvdsdv3",
+        thumbnail: "/images/thumb.jpeg",
+        fileName: "random video",
+        duration: 1000,
+        durationWatched: 0,
+        createDate: "12/10/2024",
+    },
+    {
+        video_id: "svd329esvdsdv4",
+        thumbnail: "/images/thumb.jpeg",
+        fileName: "random video",
+        duration: 1000,
+        durationWatched: 400,
+        createDate: "12/10/2024",
+    },
+    {
+        video_id: "svd329esvdsdv5",
+        thumbnail: "/images/thumb.jpeg",
+        fileName: "random video",
+        duration: 1000,
+        durationWatched: 400,
+        createDate: "12/10/2024",
+    },
+];
 
+import VideoCard from "./components/cards/VideoCard";
 const Random = () => {
     return (
-        <div className="not-prose relative bg-slate-50 rounded-xl overflow-hidden dark:bg-slate-800/25">
-            <div style={{ backgroundPosition: "10px 10px" }} className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,#fff,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]"></div>
-            <div className="relative rounded-xl overflow-auto">
+        <div className="not-prose relative rounded-md overflow-hidden bg-gray-800 p-2 md:p-5 lg:p-8 mb-3">
+            <div className="relative overflow-auto">
+                <div className="relative w-full flex gap-4 md:gap-6 snap-x snap-mandatory overflow-x-auto hide-scroll-bar">
 
-                <div className="relative w-full flex gap-6 snap-x overflow-x-auto pb-14">
-                    <div className="snap-center shrink-0">
-                        <div className="shrink-0 w-4 sm:w-48"></div>
-                    </div>
-                    
-                    <div className="snap-center shrink-0 first:pl-8 last:pr-8">
-                        <img className="shrink-0 w-80 h-40 rounded-lg shadow-xl bg-white" src="https://images.unsplash.com/photo-1604999565976-8913ad2ddb7c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=320&amp;h=160&amp;q=80" />
-                    </div>
-                    <div className="snap-center shrink-0 first:pl-8 last:pr-8">
-                        <img className="shrink-0 w-80 h-40 rounded-lg shadow-xl bg-white" src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=320&amp;h=160&amp;q=80" />
-                    </div>
-                    <div className="snap-center shrink-0 first:pl-8 last:pr-8">
-                        <img className="shrink-0 w-80 h-40 rounded-lg shadow-xl bg-white" src="https://images.unsplash.com/photo-1622890806166-111d7f6c7c97?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=320&amp;h=160&amp;q=80" />
-                    </div>
-                    <div className="snap-center shrink-0 first:pl-8 last:pr-8">
-                        <img className="shrink-0 w-80 h-40 rounded-lg shadow-xl bg-white" src="https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=320&amp;h=160&amp;q=80" />
-                    </div>
-                    <div className="snap-center shrink-0 first:pl-8 last:pr-8">
-                        <img className="shrink-0 w-80 h-40 rounded-lg shadow-xl bg-white" src="https://images.unsplash.com/photo-1575424909138-46b05e5919ec?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=320&amp;h=160&amp;q=80" />
-                    </div>
-                    <div className="snap-center shrink-0 first:pl-8 last:pr-8">
-                        <img className="shrink-0 w-80 h-40 rounded-lg shadow-xl bg-white" src="https://images.unsplash.com/photo-1559333086-b0a56225a93c?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=320&amp;h=160&amp;q=80" />
-                    </div>
-                    <div className="snap-center shrink-0">
-                        <div className="shrink-0 w-4 sm:w-48"></div>
-                    </div>
+                    {data.map((item) => (
+                        <VideoCard
+                            key={item.video_id}
+                            id={item.video_id}
+                            thumbnail={item.thumbnail}
+                            title={item.fileName}
+                            duration={item.duration}
+                            durationWatched={item.durationWatched}
+                            createDate={item.createDate}
+                            all={false}
+                        />
+                    ))}
+
                 </div>
             </div>
-            <div className="absolute inset-0 pointer-events-none border border-black/5 rounded-xl dark:border-white/5"></div>
         </div>
     )
 }
+
+
+
 
 
 export default Random;

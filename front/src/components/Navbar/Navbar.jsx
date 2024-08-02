@@ -20,8 +20,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-50 h-16 lg:h-auto">
-      <div className="max-w-screen-xxl flex flex-wrap items-center justify-between mx-auto px-2 py-3 overflow-y-auto lg:overflow-y-visible">
+    <nav className="bg-white border-gray-200 dark:bg-gray-900 sticky top-0 z-50 h-16">
+      <div className="max-w-screen-xxl flex flex-wrap items-center justify-between mx-auto p-3 overflow-y-auto lg:overflow-y-visible bg-gray-900 lg:bg-transparent shadow-2xl lg:shadow-none">
         <Logo />
 
         {/* #TODO update the navbar according to signin state */}
@@ -37,8 +37,8 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`items-center justify-between w-full mr-auto ml-0 bg-gray-800 rounded-md p-2 mt-2 shadow-down-8
-          lg:shadow-none lg:border-none lg:flex lg:w-auto lg:order-1 lg:ml-6 lg:bg-transparent lg:mt-0 ${isMenuOpen ? 'block' : 'hidden lg:block'}`}
+        <div className={`items-center justify-between w-full mr-auto ml-0 bg-gray-800 rounded-md p-2 mt-2 
+          lg:border-none lg:flex lg:w-auto lg:order-1 lg:ml-6 lg:bg-transparent lg:mt-0 ${isMenuOpen ? 'block' : 'hidden lg:block'}`}
         >
           <NavSearch className="lg:hidden" value={searchQuery} onChange={handleSearch} />
           <NavList />

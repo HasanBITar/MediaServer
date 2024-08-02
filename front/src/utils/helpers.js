@@ -16,8 +16,8 @@ export function formatDate(date) {
 }
 
 export function formatString(str, length = 35) {
-    if (str.length <= length)
+    if (str?.length <= length)
         return str;
     else
-        return str.slice(0, length) + '...';
+        return str?.slice(0, length) + '...';
 }

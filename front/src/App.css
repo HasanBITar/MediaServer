@@ -92,3 +92,23 @@ body {
 .hide-scroll-bar::-webkit-scrollbar {
   display: none;
 }
+
+.image-container::before,
+.image-container::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 10%;
+  background: rgba(0, 0, 0, 0.2); /* Adjust the shade color and opacity as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+.image-container::before {
+  top: -5%; /* Adjust the position of the first shade */
+}
+
+.image-container::after {
+  top: 5%; /* Adjust the position of the second shade */
+}

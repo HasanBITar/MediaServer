@@ -7,15 +7,8 @@ const AudioCard = ({ id, thumbnail, title, type, createDate, artist, all }) => {
   const formatedTitle = formatString(title, 20);
   const formatedDate = formatDate(createDate);
   return (
-    <Link
-      to={`/view/${id}`}
-      className="inline-block w-1/3 md:w-32 lg:w-40 md:flex-auto flex-none  "
-    >
-      <div
-        className={`relative w-full overflow-hidden  shadow-md bg-gray-800 ${
-          all ? " rounded-xl" : "rounded-full "
-        }`}
-      >
+    <Link to={`/view/${id}`} className="snap-center md:snap-start scroll-mx-6 shrink-0 w-[33%] sm:w-36 md:w-44 lg:w-48">
+      <div className="relative overflow-hidden rounded-lg shadow-md bg-gray-800 shrink-0">
         {/* Thumbnail */}
         <div
           className={all ? "w-full h-0 " : "w-full h-0 rotate-continuous"}

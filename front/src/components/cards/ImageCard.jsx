@@ -6,8 +6,8 @@ const ImageCard = ({ id, thumbnail, title, type, createDate }) => {
     const formatedTitle = formatString(title);
     const formatedDate = formatDate(createDate);
     return (
-        <Link to={`/view/${id}`} className="inline-block w-[45%] md:w-52 lg:w-60 xl:64 md:flex-auto flex-none ">
-            <div className="relative w-full overflow-hidden rounded-xl shadow-md bg-gray-800">
+        <Link to={`/view/${id}`} className="snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-56 md:w-52 lg:w-60">
+            <div className="relative overflow-hidden rounded-md shadow-md bg-gray-800 shrink-0">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '100%' }}>
                     <img

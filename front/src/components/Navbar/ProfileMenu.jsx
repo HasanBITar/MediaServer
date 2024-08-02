@@ -20,7 +20,7 @@ const ProfielMenu = () => {
         onClick={handleClick}
       >
         <img
-          className="w-10 h-10 rounded-full"
+          className="w-9 h-9 rounded-full"
           src={photo || "./images/user-profile.png"}
           alt="user photo"
         />

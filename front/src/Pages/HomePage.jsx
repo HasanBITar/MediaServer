@@ -52,8 +52,6 @@ const HomePage = () => {
   return (
     <>
       <HomeSection title={"Recent Videos"}>
-        <VideoPlayListCard></VideoPlayListCard>
-
         {data.map((item) => (
           <VideoCard
             key={item.video_id}

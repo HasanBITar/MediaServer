@@ -6,7 +6,7 @@ const MainLayout = () => {
   return (
     <>
       <NavBar />
-      <main className="w-full px-2 py-0 mx-auto bg-gray-900 text-white">
+      <main className="w-full p-3 pt-0 mx-auto bg-gray-900 text-white flex-grow">
         <Outlet />
       </main>
       {/* <footer>

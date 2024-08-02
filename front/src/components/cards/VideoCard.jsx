@@ -7,8 +7,8 @@ const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate
     const formatedDuration = formatDuration(duration);
     const formatedDate = formatDate(createDate);
     return (
-        <Link to={`/view/${id}`} className="inline-block w-[88vw] xs:w-full sm:w-full rounded-lg md:w-80 lg:w-96 md:flex-auto flex-none transition-colors ease-in-out"> 
-            <div className="relative w-full overflow-hidden rounded-lg shadow-md bg-gray-800">
+        <Link to={`/view/${id}`} className="snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-72 md:w-80 lg:w-96">
+            <div className="relative overflow-hidden rounded-md shadow-md bg-gray-800 shrink-0">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '56.25%' }}>
                     <img
@@ -21,7 +21,7 @@ const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate
                         {formatedDuration}
                     </span>
                     {/* Watched Line Progress */}
-                    <div className={`w-full h-1 bg-gray-300 rounded-full absolute bottom-0 ${progress < 3? 'invisible' : ''}`}>
+                    <div className={`w-full h-1 bg-gray-300 rounded-full absolute bottom-0 ${progress < 3 ? 'invisible' : ''}`}>
                         <div
                             className="h-full bg-blue-700 rounded-full"
                             style={{ width: `${progress}%` }}

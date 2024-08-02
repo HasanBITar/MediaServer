@@ -24,7 +24,6 @@ function App() {
     dispatch(verifyToken());
   }, [dispatch]);
 
-  // return (<Random />)
   return (
     <BrowserRouter>
       <Routes>
@@ -39,7 +38,7 @@ function App() {
         </Route>
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/" element={<LandingPage />} exact />
+        <Route path="/" element={<Random />} exact />
         {/* <Route path="/" element={<404 />} exact /> */}
       </Routes>
     </BrowserRouter>

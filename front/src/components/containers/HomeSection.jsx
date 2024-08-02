@@ -49,13 +49,12 @@ const HomeSection = ({ title, children }) => {
 
 
   return (
-    <div className="flex flex-col m-auto rounded bg-gray-800 p-5 lg:p-8 mb-2">
-      <h1 className="flex pb-5 font-bold text-4xl text-white">{title}</h1>
-      <div
-        className="flex overflow-x-scroll hide-scroll-bar"
-        ref={scrollContainerRef}
-      >
-        <div className="flex flex-nowrap space-x-7">{children}</div>
+    <div className="not-prose relative rounded-md overflow-hidden bg-gray-800 p-4 md:p-5 lg:p-8 mb-3">
+      <h1 className="flex pb-5 font-bold text-2xl md:text-4xl text-white">{title}</h1>
+      <div className="relative overflow-auto">
+        <div className="relative w-full flex gap-4 md:gap-6 snap-x snap-mandatory overflow-x-auto hide-scroll-bar" ref={scrollContainerRef}>
+          {children}
+        </div>
       </div>
     </div>
   );

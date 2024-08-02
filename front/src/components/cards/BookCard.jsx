@@ -6,8 +6,8 @@ const BookCard = ({ id, thumbnail, title, type, createDate }) => {
     const formatedTitle = formatString(title, 28);
     const formatedDate = formatDate(createDate);
     return (
-        <Link to={`/view/${id}`} className="inline-block w-1/3 md:w-32 lg:w-40 md:flex-auto flex-none ">
-            <div className="relative w-full overflow-hidden rounded-xl shadow-md bg-gray-800">
+        <Link to={`/view/${id}`} className="snap-center md:snap-start scroll-mx-6 shrink-0 w-[40%] sm:w-40 md:w-48 lg:w-50">
+            <div className="relative overflow-hidden rounded-md shadow-md bg-gray-800 shrink-0">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '150%' }}>
                     <img
