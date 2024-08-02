@@ -10,6 +10,7 @@ import Button from "../components/buttons/Button";
 
 import { signup, AUTH_STATUS } from '../store/authSlice';
 import { validateEmail, validatePassword, validateText } from "../utils/validators";
+import { API } from "../config";
 
 const SignupPage = () => {
 
@@ -90,7 +91,7 @@ const SignupPage = () => {
                         validator={validatePassword}
                     />
 
-                    <FileInput className="pb-8" label="Profile picture" setValue={setFileInfo} />
+                    <FileInput className="pb-8" label="Profile picture" types=".jpg,.png" setValue={setFileInfo} api={API.uploadProfile} />
 
                     <Button
                         className="w-full"

@@ -14,7 +14,7 @@ CREATE TABLE "file" (
     file_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID REFERENCES "user"(user_id) ON DELETE CASCADE,
     location VARCHAR(1000) NOT NULL,
-    type VARCHAR(20) CHECK (type IN ('image', 'video', 'audio', 'book')),
+    type VARCHAR(20) CHECK (type IN ('image', 'video', 'audio', 'document')),
     size INT NOT NULL,
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
@@ -25,6 +25,27 @@ CREATE TABLE video (
     width INT,
     height INT,
     bit_rate INT
+);
+
+CREATE TABLE image (
+    file_id UUID PRIMARY KEY REFERENCES file(file_id) ON DELETE CASCADE,
+    width INT,
+    height INT,
+    bit_depth INT
+);
+
+
+CREATE TABLE audio (
+    file_id UUID PRIMARY KEY REFERENCES file(file_id) ON DELETE CASCADE,
+    length INT NOT NULL,
+    bit_rate INT,
+    artist TEXT,
+    album TEXT
+);
+
+CREATE TABLE document (
+    file_id UUID PRIMARY KEY REFERENCES file(file_id) ON DELETE CASCADE,
+    pages INT
 );
 
 

@@ -5,5 +5,6 @@ export const API = {
     signin: 'auth/signin',
     signup: 'auth/signup',
     verifyToken: 'auth/verify-token',
+    uploadProfile: 'file/upload-profile',
     upload: 'file/upload',
 }

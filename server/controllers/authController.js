@@ -63,7 +63,8 @@ const verifyToken = async (req, res) => {
     try{
         const [ok, result] = await userModel.getUserById(req.userId);
         if (!ok) return await errorRespone(result, res);
-        res.status(200).json(result);
+        const token = req.token
+        res.status(200).json({...result, token});
     }
     catch (err) {
         await errorRespone(err, res);

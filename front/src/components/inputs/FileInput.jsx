@@ -1,13 +1,21 @@
-import Uploady from '@rpldy/uploady';
+import { useSelector } from 'react-redux';
+import Uploady, { withRequestPreSendUpdate } from '@rpldy/uploady';
 import FileInputHelper from './FileInputHelper';
-import { BACKEND_API, API } from '../../config';
+import { BACKEND_API } from '../../config';
 
-const FileInput = ({ label, className, setValue }) => {
+const FileInput = ({ label, className, types, multiple = false, setValue, api }) => {
+    const token = useSelector(state => state.auth.user?.token);
+
     return (
         <Uploady
-            destination={{ url: BACKEND_API + API.upload }}
-            multiple={false}
-            accept=".jpg,.png"
+            destination={{ 
+                url: BACKEND_API + api,
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                }
+            }}
+            multiple={multiple}
+            accept={types}
         >
             <FileInputHelper label={label} className={className} setValue={setValue} />
         </Uploady>

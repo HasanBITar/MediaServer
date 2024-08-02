@@ -17,6 +17,9 @@ export default {
         'down-8': '0 8px 0 0 black',
       },
       colors: {
+        black: {
+          'semi-trans' : '#000000cc', 
+        },
         gray: {
           900: '#000000',
           800: '#121212',
