@@ -10,7 +10,7 @@ router.post('/upload', verifyToken, uploader.single('file'), fileController.uplo
 
 router.get('/', verifyToken, fileController.getUserFiles)
 
-router.get('/video/:videoId', verifyToken, fileController.streamVideo)
+router.get('/videos/:videoId', fileController.streamVideo)
 
 module.exports = router;
 
