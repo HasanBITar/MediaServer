@@ -40,7 +40,7 @@ function App() {
         </Route>
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/" element={<Random />} exact />
+        <Route path="/" element={<Random />} />
         {/* <Route path="/" element={<404 />} exact /> */}
       </Routes>
     </BrowserRouter>
