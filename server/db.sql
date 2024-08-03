@@ -16,6 +16,7 @@ CREATE TABLE "file" (
     location VARCHAR(1000) NOT NULL,
     type VARCHAR(20) CHECK (type IN ('image', 'video', 'audio', 'document')),
     size INT NOT NULL,
+    thumbnail VARCHAR(1000),
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

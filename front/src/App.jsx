@@ -8,10 +8,11 @@ import HomePage from "./pages/HomePage";
 import SigninPage from "./pages/SigninPage";
 import SignupPage from "./pages/SignupPage";
 import LandingPage from "./pages/LandingPage";
-import Videos from "./pages/Videos";
+import VideoLib from "./pages/VideoLib";
 import Images from "./pages/Images";
 import Music from "./pages/Music";
 import Documents from "./pages/Documents";
+import VideoPage from "./pages/VideoPage";
 
 import ProtectedRoute from "./store/ProtectedRoute";
 import { verifyToken } from "./store/authSlice";
@@ -30,7 +31,8 @@ function App() {
         <Route element={<ProtectedRoute />}>
           <Route element={<MainLayout />}>
             <Route path="home" element={<HomePage />} />
-            <Route path="videos" element={<Videos />} />
+            <Route path="videos" element={<VideoLib />} />
+            <Route path="videos/:videoId" element={<VideoPage />} /> 
             <Route path="images" element={<Images />} />
             <Route path="music" element={<Music />} />
             <Route path="documents" element={<Documents />} />

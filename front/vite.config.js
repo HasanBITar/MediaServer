@@ -4,4 +4,14 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-})
+  resolve: {
+    alias: {
+      '@vidstack/react/styles': 'node_modules/@vidstack/react/styles',
+    },
+  },
+  css: {
+    preprocessorOptions: {
+      // Add any necessary preprocessor options here
+    },
+  },
+});

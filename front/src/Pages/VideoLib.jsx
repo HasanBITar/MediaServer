@@ -1,7 +1,7 @@
 import SidebarLayout from "../layouts/SidebarLayout";
 import VideoSubPage from "../components/SubPages/VideoSubPage";
 
-function Videos() {
+function VideoLib() {
   return (
     <SidebarLayout>
       <VideoSubPage />
@@ -9,4 +9,4 @@ function Videos() {
   );
 }
 
-export default Videos;
+export default VideoLib;

@@ -43,7 +43,7 @@ const SignupPage = () => {
         console.log('submitted', email, password);
         if (isEmailValid && isPasswordValid && isUsernameValid) {
             console.log('Dispatching signup', { email, password });
-            const profilePhoto = fileInfo?.filename;
+            const profilePhoto = fileInfo?.file?.filename;
             dispatch(signup({ email, password, username, profilePhoto }));
         } else {
             setErrorMessage('Check your inputs.')

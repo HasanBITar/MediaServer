@@ -3,6 +3,8 @@ const fs = require('fs');
 
 const config = require('./config');
 
+console.log(`Running on ${config.env.DEFAULT_DB} database`);
+
 const dbconfig = config.env.DEFAULT_DB === 'local' ? {
   user: config.env.LOCAL_DB_USER,
   password: config.env.LOCAL_DB_PASSWORD,

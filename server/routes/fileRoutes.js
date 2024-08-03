@@ -8,6 +8,10 @@ router.post('/upload-profile', uploader.single('file'), fileController.uploadPro
 
 router.post('/upload', verifyToken, uploader.single('file'), fileController.uploadFile)
 
+router.get('/', verifyToken, fileController.getUserFiles)
+
+router.get('/video/:videoId', verifyToken, fileController.streamVideo)
+
 module.exports = router;
 
 

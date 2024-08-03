@@ -7,4 +7,14 @@ export const API = {
     verifyToken: 'auth/verify-token',
     uploadProfile: 'file/upload-profile',
     upload: 'file/upload',
+    getFiles: 'file/',
+    thumbnail: BACKEND_API + 'thumbnails/',
+    steamVideo: BACKEND_API + 'videos/',
+}
+
+export const fileTypes = {
+    image: 'image',
+    video: 'video',
+    audio: 'audio',
+    document: 'document'
 }

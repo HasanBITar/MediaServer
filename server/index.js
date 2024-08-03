@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
+const path = require('path');
 
 const config = require('./config.js')
 
@@ -17,6 +18,7 @@ app.use(morgan('dev'));
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/file', fileRoutes);
+app.use('/api/v1/thumbnails', express.static(path.join(__dirname, 'uploads/thumbnails')));
 
 app.get('/api/v1/protected', authenticateToken, (req, res) => {
   res.send('protected route');

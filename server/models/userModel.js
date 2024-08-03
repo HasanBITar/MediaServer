@@ -2,13 +2,14 @@ const bcrypt = require('bcryptjs');
 
 const db = require('../db');
 
-const addUser = async ({ username, email, password, profile_photo = null, is_admin = false }) => {
+const addUser = async ({ username, email, password, profilePhoto = null, isAdmin = false }) => {
+    console.log('adduser', profilePhoto)
     try {
         const hashedPassword = await bcrypt.hash(password, 10);
         email = email.toLowerCase()
         const result = await db.query(
             'INSERT INTO "user" (username, email, password, profile_photo, is_admin) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-            [username, email, hashedPassword, profile_photo, is_admin]
+            [username, email, hashedPassword, profilePhoto, isAdmin]
         );
         return [true, result.rows[0]];
     }

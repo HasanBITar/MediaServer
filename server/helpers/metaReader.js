@@ -1,5 +1,5 @@
 const ffmpeg = require('fluent-ffmpeg');
-
+const path = require('path');
 /**
  * Get video metadata.
  * @param {string} filePath - Path to the video file.
@@ -12,20 +12,51 @@ async function videoReader(filePath) {
         return reject(err);
       }
 
-      const videoStream = metadata.find(stream => stream.codec_type === 'video')
+      const videoStream = metadata.streams.find(stream => stream.codec_type === 'video')
 
       const info = {
-        duration: metadata.format.duration,
+        length: metadata.format.duration,
         width: videoStream.width,
         height: videoStream.height,
-        bit_rate: videoStream.bit_rate,
+        bitRate: videoStream.bit_rate,
       };
 
-      resolve(info);
+      const thumbnailTime = Math.ceil(info.length * 0.3);
+      const fileName = path.basename(filePath, path.extname(filePath)) + '.png';
+      let ok = false;
+      ffmpeg(filePath)
+        .screenshots({
+          timestamps: [thumbnailTime],
+          filename: fileName,
+          folder: './uploads/thumbnails/',
+          size: `${info.width}x${info.height}`,
+        })
+        .on('end', () => {
+          console.log('video extract', [info, fileName])
+          resolve([info, fileName]);
+        })
+        .on('error', (err) => {
+          console.error('Error extracting thumbnail:', err);
+        });
     });
   });
 }
 
+/**
+ * Extract a thumbnail at 30% of the video duration.
+ * @param {string} filePath - Path to the video file.
+ * @param {string} outputPath - Path to save the thumbnail image.
+ */
+async function extractVideoThumbnail(filePath) {
+  try {
+
+
+  } catch (error) {
+    console.error('Error getting video info:', error);
+  }
+}
+
 module.exports = {
   videoReader,
+  extractVideoThumbnail,
 }

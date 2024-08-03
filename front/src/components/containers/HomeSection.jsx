@@ -11,7 +11,8 @@ const HomeSection = ({ title, children }) => {
 
     const stepScroll = () => {
       if (!scrollContainer || isMouseOver) return
-      const cardWidth = scrollContainer.firstChild.offsetWidth;
+      const cardWidth = scrollContainer.firstChild?.offsetWidth;
+      if (cardWidth === null) return;
       const scrollDistance = cardWidth + 36;
       const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 

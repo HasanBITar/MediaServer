@@ -21,3 +21,17 @@ export function formatString(str, length = 35) {
     else
         return str?.slice(0, length) + '...';
 }
+
+
+export function extractFilename(formattedString) {
+    try {
+        const firstUnderscoreIndex = formattedString.indexOf('__');
+        const filename = formattedString.substring(firstUnderscoreIndex + 2);
+        return filename;
+    }
+    catch (err) {
+        console.error(err);
+        return "unknow name";
+    }
+}
+

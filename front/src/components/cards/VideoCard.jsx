@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
-import { formatString, formatDuration, formatDate } from "../../utils/helpers";
+import { formatString, formatDuration, formatDate, extractFilename } from "../../utils/helpers";
 
 const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate, scroll=true }) => {
+    console.log ({ id, thumbnail, title, duration, durationWatched, createDate, scroll })
+    title = extractFilename(title);
     const progress = durationWatched / duration * 100;
     const formatedTitle = formatString(title, 65);
     const formatedDuration = formatDuration(duration);
     const formatedDate = formatDate(createDate);
+    console.log('etracted', title);
     return (
-        <Link to={`/view/${id}`} className={scroll? "snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-72 md:w-80 lg:w-96": ""}>
+        <Link to={`/videos/${id}`} className={scroll? "snap-center md:snap-start scroll-mx-6 shrink-0 w-[80%] sm:w-72 md:w-80 lg:w-96": ""}>
             <div className="relative overflow-hidden rounded-md shadow-md bg-gray-800 shrink-0">
                 {/* Thumbnail */}
                 <div className="w-full h-0" style={{ paddingBottom: '56.25%' }}>
@@ -17,7 +20,7 @@ const VideoCard = ({ id, thumbnail, title, duration, durationWatched, createDate
                         className="absolute inset-0 object-cover w-full h-full transition-transform duration-300 transform hover:scale-110 ease-in-out"
                     />
                     {/* Video Duration */}
-                    <span className="absolute bottom-3 right-2 px-2 py-1 text-xs font-semibold text-white bg-black bg-opacity-75 rounded">
+                    <span className="absolute bottom-3 right-2 px-2 py-1 text-xs font-semibold text-white dark:bg-black bg-opacity-75 rounded">
                         {formatedDuration}
                     </span>
                     {/* Watched Line Progress */}

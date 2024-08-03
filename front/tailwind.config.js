@@ -17,15 +17,13 @@ export default {
         'down-8': '0 8px 0 0 black',
       },
       colors: {
-        black: {
-          'semi-trans' : '#000000cc', 
-        },
+        'semi-trans': '#000000cc',
         gray: {
           900: '#000000',
           800: '#121212',
-          'hover' : '#1f1f1f',
-          'menu' : '#282828',
-          'input' : '#242424',
+          'hover': '#1f1f1f',
+          'menu': '#282828',
+          'input': '#242424',
           // 900: '#1f2937',
           // 800: '#111827' 
         },
