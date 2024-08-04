@@ -1,9 +1,10 @@
 import SidebarLayout from "../layouts/SidebarLayout";
 import VideoSubPage from "../components/SubPages/VideoSubPage";
+import LibSidebar from "../components/sidebar/LibSidebar";
 
-function VideoLib() {
+const VideoLib = () => {
   return (
-    <SidebarLayout>
+    <SidebarLayout sidebar={LibSidebar}>
       <VideoSubPage />
     </SidebarLayout>
   );

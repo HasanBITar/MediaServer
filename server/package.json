@@ -8,7 +8,7 @@
         "lint": "eslint .",
         "fix-lint": "prettier --write \"./src/**/*.js\" && eslint --fix \"./src/**/*.js\"",
         "start": "node server.js -l \"D:\\Demo\"",
-        "dev": "nodemon index.js"
+        "dev": "nodemon server.js"
     },
     "bin": "server.js",
     "pkg": {

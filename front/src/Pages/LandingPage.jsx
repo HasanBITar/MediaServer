@@ -2,12 +2,12 @@
 
 const LandingPage = () => {
     return (
-        <div class="bg-black text-white">
-            <div class="bg-black pb-6 sm:pb-8 lg:pb-12 h-screen">
-                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                    <header class="mb-8 flex items-center justify-between py-4 md:mb-12 md:py-8 xl:mb-16">
+        <div className="bg-black text-white">
+            <div className="bg-black pb-6 sm:pb-8 lg:pb-12 h-screen">
+                <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+                    <header className="mb-8 flex items-center justify-between py-4 md:mb-12 md:py-8 xl:mb-16">
 
-                        <a href="/" class="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl" aria-label="logo">
+                        <a href="/" className="inline-flex items-center gap-2.5 text-2xl font-bold text-white md:text-3xl" aria-label="logo">
                             <svg width="60" height="60" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M24.5194 13.4429C24.4453 13.9533 24.1087 14.6468 23.7226 15.2497C23.2354 16.0105 22.4622 16.5433 21.5774 16.7283L17.6797 17.5434C17.0533 17.6744 16.4852 18.0022 16.0587 18.479L13.503 21.3357C13.0227 21.8725 12.687 21.7445 12.687 21.0244C12.6812 21.0511 11.4186 24.3072 14.7646 26.2371C16.0502 26.9787 17.9009 26.7122 19.1865 25.9707L25.9983 22.0416C28.5458 20.5722 30.3445 18.0863 30.9424 15.2089C30.966 15.095 30.9843 14.9808 31.004 14.8667L24.5194 13.4429Z" fill="url(#paint0_linear_2484_3243)" />
                                 <path d="M22.7528 9.51774C24.0384 10.2593 24.5637 11.3633 24.5637 12.8464C24.5637 13.0477 24.5479 13.2466 24.5194 13.4425L27.2641 14.6215L31.004 14.8663C31.4829 12.0948 30.5444 9.24202 28.862 6.97445C27.5959 5.268 25.9667 3.78714 24.0081 2.65738C22.417 1.73966 20.7636 1.13501 19.1025 0.803223L17.2361 3.22023L16.6465 5.99559L22.7528 9.51774Z" fill="url(#paint1_linear_2484_3243)" />
@@ -65,10 +65,10 @@ const LandingPage = () => {
 
 
 
-                        <a href="/signin" class="hidden rounded-lg bg-blue-700 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block">Login</a>
+                        <a href="/signin" className="hidden rounded-lg bg-blue-700 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:text-gray-700 md:text-base lg:inline-block">Login</a>
 
-                        <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-blue-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                        <button type="button" className="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-blue-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
                             </svg>
 
@@ -77,26 +77,26 @@ const LandingPage = () => {
 
                     </header>
 
-                    <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
+                    <section className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
 
-                        <div class="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
-                            <p class="mb-4 font-semibold text-blue-400 md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
+                        <div className="flex flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
+                            <p className="mb-4 font-semibold text-blue-400 md:mb-6 md:text-lg xl:text-xl">Very proud to introduce</p>
 
-                            <h1 class="mb-8 text-4xl font-bold text-white sm:text-5xl md:mb-12 md:text-6xl">Revolutionary way to <span class="text-blue-600">Manage Your Media</span></h1>
+                            <h1 className="mb-8 text-4xl font-bold text-white sm:text-5xl md:mb-12 md:text-6xl">Revolutionary way to <span className="text-blue-600">Manage Your Media</span></h1>
 
-                            <p class="mb-8 leading-relaxed text-gray-200 md:mb-12 lg:w-4/5 xl:text-xl">A versatile and user-friendly cloud storage platform designed to securely store, access, and share your files from anywhere in the world. With OpenMedia, you can effortlessly upload documents, photos, videos, and other digital content to the cloud, ensuring your important data is always safe and accessible.</p>
+                            <p className="mb-8 leading-relaxed text-gray-200 md:mb-12 lg:w-4/5 xl:text-xl">A versatile and user-friendly cloud storage platform designed to securely store, access, and share your files from anywhere in the world. With OpenMedia, you can effortlessly upload documents, photos, videos, and other digital content to the cloud, ensuring your important data is always safe and accessible.</p>
 
-                            <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-                                <a href="/signup" class="inline-block rounded-lg bg-blue-700 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base">Register</a>
+                            <div className="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+                                <a href="/signup" className="inline-block rounded-lg bg-blue-700 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base">Register</a>
 
-                                <a href="/signin" class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-blue-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Login</a>
+                                <a href="/signin" className="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-blue-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Login</a>
                             </div>
                         </div>
 
 
 
-                        <div class="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
-                            <img src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Fakurian Design" class="h-full w-full object-cover object-center" />
+                        <div className="h-48 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+                            <img src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Fakurian Design" className="h-full w-full object-cover object-center" />
                         </div>
 
                     </section>
@@ -106,98 +106,98 @@ const LandingPage = () => {
 
 
 
-            <div class="bg-[#121212] py-6 sm:py-8 lg:py-12 h-screen flex items-center">
-                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+            <div className="bg-[#121212] py-6 sm:py-8 lg:py-12 h-screen flex items-center">
+                <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
 
-                    <div class="mb-10 md:mb-16">
-                        <h2 class="mb-4 text-center text-3xl font-bold text-blue-500 md:mb-6 lg:text-5xl">Our competitive advantage</h2>
+                    <div className="mb-10 md:mb-16">
+                        <h2 className="mb-4 text-center text-3xl font-bold text-blue-500 md:mb-6 lg:text-5xl">Our competitive advantage</h2>
 
-                        <p class="mx-auto max-w-screen-md text-center text-gray-200 md:text-xl">OpenMedia stands out with its state-of-the-art security features, ensuring your data is always protected. Our user-friendly interface offers seamless access and sharing capabilities across all devices. Additionally, we provide flexible and scalable storage solutions to meet both personal and professional needs, making us the go-to choice for reliable cloud storage.</p>
+                        <p className="mx-auto max-w-screen-md text-center text-gray-200 md:text-xl">OpenMedia stands out with its state-of-the-art security features, ensuring your data is always protected. Our user-friendly interface offers seamless access and sharing capabilities across all devices. Additionally, we provide flexible and scalable storage solutions to meet both personal and professional needs, making us the go-to choice for reliable cloud storage.</p>
                     </div>
 
 
-                    <div class="grid gap-12 sm:grid-cols-2 xl:grid-cols-3 xl:gap-16">
+                    <div className="grid gap-12 sm:grid-cols-2 xl:grid-cols-3 xl:gap-16">
 
-                        <div class="flex flex-col items-center">
-                            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex flex-col items-center">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                                 </svg>
                             </div>
 
-                            <h3 class="mb-2 text-center text-lg font-semibold md:text-xl">Growth</h3>
-                            <p class="mb-2 text-center text-gray-500">OpenMedia is rapidly expanding its user base by continuously innovating and enhancing our cloud storage solutions, ensuring we meet the evolving needs of our customers and stay ahead in the market.</p>
-                            <a href="#" class="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
+                            <h3 className="mb-2 text-center text-lg font-semibold md:text-xl">Growth</h3>
+                            <p className="mb-2 text-center text-gray-500">OpenMedia is rapidly expanding its user base by continuously innovating and enhancing our cloud storage solutions, ensuring we meet the evolving needs of our customers and stay ahead in the market.</p>
+                            <a href="#" className="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
                         </div>
 
 
 
-                        <div class="flex flex-col items-center">
-                            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex flex-col items-center">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                 </svg>
                             </div>
 
-                            <h3 class="mb-2 text-center text-lg font-semibold md:text-xl">Security</h3>
-                            <p class="mb-2 text-center text-gray-500">OpenMedia prioritizes your data security with advanced encryption and stringent protection measures, ensuring your files are always safe and secure.</p>
-                            <a href="#" class="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
+                            <h3 className="mb-2 text-center text-lg font-semibold md:text-xl">Security</h3>
+                            <p className="mb-2 text-center text-gray-500">OpenMedia prioritizes your data security with advanced encryption and stringent protection measures, ensuring your files are always safe and secure.</p>
+                            <a href="#" className="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
                         </div>
 
 
 
-                        <div class="flex flex-col items-center">
-                            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex flex-col items-center">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
                                 </svg>
                             </div>
 
-                            <h3 class="mb-2 text-center text-lg font-semibold md:text-xl">Cloud</h3>
-                            <p class="mb-2 text-center text-gray-500">OpenMedia harnesses the power of the cloud to provide seamless, reliable, and scalable storage solutions accessible from any device, anywhere in the world.</p>
-                            <a href="#" class="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
+                            <h3 className="mb-2 text-center text-lg font-semibold md:text-xl">Cloud</h3>
+                            <p className="mb-2 text-center text-gray-500">OpenMedia harnesses the power of the cloud to provide seamless, reliable, and scalable storage solutions accessible from any device, anywhere in the world.</p>
+                            <a href="#" className="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
                         </div>
 
 
 
-                        <div class="flex flex-col items-center">
-                            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex flex-col items-center">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                                 </svg>
                             </div>
 
-                            <h3 class="mb-2 text-center text-lg font-semibold md:text-xl">Speed</h3>
-                            <p class="mb-2 text-center text-gray-500">OpenMedia ensures lightning-fast uploads and downloads, so you can access and share your files without any delays.</p>
-                            <a href="#" class="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
+                            <h3 className="mb-2 text-center text-lg font-semibold md:text-xl">Speed</h3>
+                            <p className="mb-2 text-center text-gray-500">OpenMedia ensures lightning-fast uploads and downloads, so you can access and share your files without any delays.</p>
+                            <a href="#" className="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
                         </div>
 
 
 
-                        <div class="flex flex-col items-center">
-                            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex flex-col items-center">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                                 </svg>
                             </div>
 
-                            <h3 class="mb-2 text-center text-lg font-semibold md:text-xl">Support</h3>
-                            <p class="mb-2 text-center text-gray-500">OpenMedia offers 24/7 dedicated customer support to assist you with any issues, ensuring a smooth and reliable experience.</p>
-                            <a href="#" class="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
+                            <h3 className="mb-2 text-center text-lg font-semibold md:text-xl">Support</h3>
+                            <p className="mb-2 text-center text-gray-500">OpenMedia offers 24/7 dedicated customer support to assist you with any issues, ensuring a smooth and reliable experience.</p>
+                            <a href="#" className="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
                         </div>
 
 
 
-                        <div class="flex flex-col items-center">
-                            <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div className="flex flex-col items-center">
+                            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-700 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                                 </svg>
                             </div>
 
-                            <h3 class="mb-2 text-center text-lg font-semibold md:text-xl">Dark Mode</h3>
-                            <p class="mb-2 text-center text-gray-500">OpenMedia features a sleek dark mode option, providing a comfortable viewing experience and reducing eye strain during extended use.</p>
-                            <a href="#" class="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
+                            <h3 className="mb-2 text-center text-lg font-semibold md:text-xl">Dark Mode</h3>
+                            <p className="mb-2 text-center text-gray-500">OpenMedia features a sleek dark mode option, providing a comfortable viewing experience and reducing eye strain during extended use.</p>
+                            <a href="#" className="font-bold text-blue-700 transition duration-100 hover:text-blue-600 active:text-blue-700">More</a>
                         </div>
 
                     </div>
