@@ -60,20 +60,21 @@ const VideoSubPage = () => {
     }, [isLoading])
 
     const handlePageChange = (newPage) => {
+        console.log(newPage);
         setPage(newPage);
     }
 
     const renderContent = () => {
         if (isLoading) {
-            return <div>Loading...</div>; // Loading indicator
+            return <div>Loading...</div>;
         }
 
         if (error) {
-            return <div>Error: {error.message}</div>; // Error message
+            return <div>Error: {error.message}</div>;
         }
 
         if (!data || data.data.length === 0) {
-            return <div>No videos found.</div>; // No data message
+            return <div>No videos found.</div>;
         }
 
         return (
@@ -117,12 +118,18 @@ const VideoSubPage = () => {
 
                 </div>
             </LibraryFeatured>
-
-            <Pagination
-                totalItems={123}
-                currentPage={1}
-                onPageChange={handlePageChange}
-            />
+            {!!data && data.data.length !== 0 && !error ?
+                <Pagination
+                    totalItems={data.total}
+                    currentPage={data.page}
+                    onPageChange={handlePageChange}
+                /> :
+                <Pagination
+                    totalItems={0}
+                    currentPage={1}
+                    onPageChange={handlePageChange}
+                />
+            }
 
         </div>
     )
