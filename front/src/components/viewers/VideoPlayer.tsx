@@ -60,16 +60,17 @@ const VideoPlayer = ({ streamUrl, thumbnail, title }) => {
 
   // We can listen for the `can-play` event to be notified when the player is ready.
   function onCanPlay(detail: MediaCanPlayDetail, nativeEvent: MediaCanPlayEvent) {
-    // ...
+    // 
   }
 
   return (
     <>
       <MediaPlayer
-        className="player"
+        className="player myvideoplayer !rounded-xl overflow-hidden"
         title={title}
         src={src}
         crossOrigin
+        autoPlay={true}
         playsInline
         onProviderChange={onProviderChange}
         onCanPlay={onCanPlay}
@@ -79,11 +80,8 @@ const VideoPlayer = ({ streamUrl, thumbnail, title }) => {
           <Poster
             className="vds-poster"
             src={thumbnail}
-            alt="Girl walks into campfire with gnomes surrounding her friend ready for their next meal!"
+            alt="video player"
           />
-          {textTracks.map((track) => (
-            <Track {...track} key={track.src} />
-          ))}
         </MediaProvider>
 
         {/* Layouts */}

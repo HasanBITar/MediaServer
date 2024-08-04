@@ -1,4 +1,6 @@
 
+import moment from 'moment';
+
 export function formatDuration(seconds) {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
@@ -12,7 +14,8 @@ export function formatDuration(seconds) {
 }
 
 export function formatDate(date) {
-    return date;
+    date = moment(date, true);
+    return '' + date.format('dddd, MMMM Do YYYY', moment.ISO_8601, true);
 }
 
 export function formatString(str, length = 35) {

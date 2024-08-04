@@ -21,7 +21,6 @@ export const getToken = () => {
 const apiClient = axios.create({ baseURL: BACKEND_API });
 
 export const login = createAsyncThunk(API.signin, async (credentials, { rejectWithValue }) => {
-  console.log('Logging in:', credentials);
   try {
     const response = await apiClient.post(API.signin, credentials);
     return response.data;
@@ -37,7 +36,6 @@ export const login = createAsyncThunk(API.signin, async (credentials, { rejectWi
 
 export const signup = createAsyncThunk(API.signup, async (user, { rejectWithValue }) => {
   try {
-    console.log('Signinng up: ', API.signup, user)
     const response = await apiClient.post(API.signup, user);
     return response.data;
   }
@@ -69,7 +67,7 @@ export const verifyToken = createAsyncThunk(API.verifyToken, async () => {
 
 const initialState = {
   user: null,
-  status: AUTH_STATUS.idle,
+  status: AUTH_STATUS.loading,
   error: null,
 };
 
@@ -94,7 +92,6 @@ const authSlice = createSlice({
       })
       .addCase(login.rejected, (state, action) => {
         state.status = AUTH_STATUS.failed;
-        console.log(action);
         state.error = action.payload || action.error.message;
       })
       // Signup
@@ -108,7 +105,6 @@ const authSlice = createSlice({
       })
       .addCase(signup.rejected, (state, action) => {
         state.status = AUTH_STATUS.failed;
-        console.log(action);
         state.error = action.payload || action.error.message;
       })
       // Verify

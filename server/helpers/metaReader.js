@@ -18,11 +18,11 @@ async function videoReader(filePath) {
         length: metadata.format.duration,
         width: videoStream.width,
         height: videoStream.height,
-        bitRate: videoStream.bit_rate,
+        bitRate: metadata.format.bit_rate,
       };
 
       const thumbnailTime = Math.ceil(info.length * 0.3);
-      const fileName = path.basename(filePath, path.extname(filePath)) + '.png';
+      const fileName = path.basename(filePath, path.extname(filePath)) + '.jpg';
       let ok = false;
       ffmpeg(filePath)
         .screenshots({

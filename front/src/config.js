@@ -9,7 +9,7 @@ export const API = {
     upload: 'file/upload',
     getFiles: 'file/',
     thumbnail: BACKEND_API + 'thumbnails/',
-    steamVideo: BACKEND_API + 'videos/',
+    steamVideo: BACKEND_API + 'file/videos/',
 }
 
 export const fileTypes = {

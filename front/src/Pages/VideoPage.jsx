@@ -3,20 +3,28 @@ import React, { useEffect, useState } from 'react';
 import { API } from '../config';
 import VideoPlayer from '../components/viewers/VideoPlayer';
 import { useParams } from 'react-router-dom';
+import SidebarLayout from '../layouts/SidebarLayout';
 
-const VideoPage = () => {
+const VideoPage = ({}) => {
   const { videoId } = useParams();
   const [streamUrl, setStreamUrl] = useState('');
 
   useEffect(() => {
     const url = API.steamVideo + videoId;
+    console.log(url);
     setStreamUrl(url);
   }, [videoId]);
 
   return (
-    <div>
-      {streamUrl && <VideoPlayer streamUrl={streamUrl} title={'random test'} thumbnail={"http://localhost:5000/api/v1/thumbnails/d49ea858-6066-47b8-acd5-21ec6234b4cd--1722685920787__2K%20Video%20Demo%20[hddwAIXbKZo].png"} />}
-    </div>
+    <SidebarLayout>
+      <div className='p-2 lg:p-4 '>
+        <div className='bg-red-500 flex justify-center'>
+          <div className='lg:w-[80%]'>
+            {streamUrl && <VideoPlayer streamUrl={streamUrl} />}
+          </div>
+        </div>
+      </div>
+    </SidebarLayout>
   );
 };
 

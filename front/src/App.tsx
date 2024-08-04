@@ -32,7 +32,7 @@ function App() {
           <Route element={<MainLayout />}>
             <Route path="home" element={<HomePage />} />
             <Route path="videos" element={<VideoLib />} />
-            <Route path="videos/:videoId" element={<VideoPage />} /> 
+            <Route path="videos/:videoId" element={<VideoPage />} />
             <Route path="images" element={<Images />} />
             <Route path="music" element={<Music />} />
             <Route path="documents" element={<Documents />} />
@@ -40,7 +40,7 @@ function App() {
         </Route>
         <Route path="/signin" element={<SigninPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/" element={<Random />} />
+        <Route path="/" element={<LandingPage />} />
         {/* <Route path="/" element={<404 />} exact /> */}
       </Routes>
     </BrowserRouter>

@@ -32,9 +32,7 @@ const SigninPage = () => {
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
-        console.log('submitted', email, password);
         if (isEmailValid && isPasswordValid) {
-            console.log('Dispatching login', { email, password });
             dispatch(login({ email, password }));
         } else {
             setErrorMessage('Check your inputs.')
